@@ -1,4 +1,4 @@
 ---
-title: 'Nginx 🐕‍🦺'
-description: '高性能的 HTTP 和反向代理 Web 服务器，奈何反向代理的 PHP-FMP 服务太慢。'
+title: 'Nginx '
+description: 'A high-performance HTTP and reverse proxy web server, but the reverse proxy PHP-FPM service is too slow.'
 ---

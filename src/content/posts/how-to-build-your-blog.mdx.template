@@ -1,0 +1,252 @@
+---
+title: "How to Quickly Build Your Own Blog Website"
+description: "After open-sourcing my blog recently, I received a lot of positive feedback from friends, as well as various issues encountered by others during deployment or customization. I even received an email from a nearly 50-year-old non-professional programmer, which made me very happy."
+pubDate: "2024-08-16 16:40:00"
+category: "life"
+banner: "@images/posts/gblog/0-gblog.png"
+banner2: "@images/posts/gblog/8-rundev.png"
+ogImage: "@images/posts/gblog/0-gblog.png"
+tags: ["Astro", "Blog"]
+---
+
+After open-sourcing my blog recently, I received a lot of positive feedback from friends, as well as various issues encountered by others during deployment or customization. I even received an email from a nearly 50-year-old non-professional programmer, which made me very happy. So I decided to write an article to help everyone build their own blog based on [gblog](https://github.com//gblog) more quickly.
+
+## Preparation
+
+Before we start, you need to have some preparatory knowledge; originally, I wanted to write an article from scratch, but I found that it involved too much knowledge; so I assume everyone has the following background:
+
+1. Know some basic front-end technologies (such as knowing what HTML/JS/TS are)
+2. Have a GitHub account
+3. Have GIT/NodeJS installed on your machine (optional)
+4. Know how to use the terminal to run command-line programs (such as `npm run dev`, etc., optional)
+5. Have a Cloudflare account (optional)
+
+If you have no technical background, you might wonder why you need to master this knowledge, because this is a static blog, with no admin backend or database; this means all blog data is stored in individual HTML files, and any modifications you want to make can only be done by directly modifying the source code.
+
+But don't worry too much, I will guide you step by step on how to set it up in the following tutorial.
+
+## How to Deploy
+
+Following the principle of Success First, let's deploy it to the Cloudflare platform first. If you want to deploy to other platforms like Zeabur and Vercel, you just need to click the Deploy button in the [documentation](https://github.com//gblog?tab=readme-ov-file#deploy-to-zeabur) to deploy it to the corresponding platform with one click.
+
+### Deploy to Cloudflare 1 - Create a new Fork
+
+1. Log in to your GitHub account and Fork the [gblog](https://github.com//gblog/fork) project
+2. Note that when forking, you need to **uncheck** the "Copy the `astro` branch only" option
+
+GitHub's fork allows you to quickly create a project identical to the original one under your own account; and the reason for unchecking is that we need to use another branch (`gblog-template`) to deploy; the default `astro` branch contains all my blog posts and images, which will cause a long time to optimize images during the first deployment; of course, you can also use the latest astro branch and then delete the data under `src/content/posts` to speed up the compilation.
+
+![fork](@images/posts/gblog/1-fork.png)
+
+### Deploy to Cloudflare 2 - Build
+
+After the project is forked, log in to your Cloudflare account. Find Workers & Pages in the left menu bar, and then create a new Page. You can refer to this [documentation](https://docs.astro.build/en/guides/deploy/cloudflare/#how-to-deploy-a-site-with-git) for specific steps, or refer to the video clip below. Note that when selecting the **Production branch**, you can choose the `gblog-template` branch to save build time.
+
+<video controls>
+  <source src="https://github.com/user-attachments/assets/c8556b49-d7a4-43fa-9a7f-5a27db5c74f8" type="video/mp4" />
+</video>
+
+After the deployment is successful, you can access the blog we just created through the default domain name provided by Cloudflare. If everything is normal, you will see a good blog page like https://gblog-test-1.pages.dev.
+
+## How to Publish Articles
+
+A static blog site does not have an admin backend to manage blog data, and we do not plan to add CRM support for gblog. So if you want to publish your own articles, you need to add a new file in the corresponding directory, and one file is a blog post.
+
+The simplest way is to add a file in the `src/content/posts` folder through GitHub, as shown below:
+
+![publish](@images/posts/gblog/2-publish.png)
+
+The file suffix is usually `.md` or `.mdx`; the fixed format of the blog post is as follows, and you can see more configuration items in the [definition here](https://github.com//gblog/blob/astro/src/content/config.ts#L3):
+
+```md
+---
+title: "Title"
+description: "Description"
+pubDate: "Publication date such as 2021-11-12 03:10:04"
+category: "tool"
+banner: "Cover image"
+tags: ["Tag1", "Tag2"]
+---
+
+Content
+```
+
+> MD/MDX are Markdown formatted text content. If you are not familiar with this format, I recommend you check out the [Markdown tutorial](https://www.markdowntutorial.com/zh-cn/).
+
+There are a few points to note about the fixed format of blog posts:
+
+1. The attribute name is before the English colon (:), and the attribute value is after it; the attribute value is usually enclosed in English double quotes
+2. A blog post can only have one category, and it must be the **file name** of an existing file under `src/content/categories` (such as astro/tool, etc.)
+3. If you want to add or delete more categories, please directly modify the files under `src/content/categories`
+4. The cover image (banner) of the article can be an online image address such as https://example.com/a.png
+5. If the cover image (banner) of the article is a local image, it needs to be placed in the `src/images/` directory
+   1. For example, if you create a new folder `hello` in the `src/images` directory and put an image such as `banner1.png` in it, then the banner field of this article can be configured as: `@images/hello/banner1.png`, note that there is an `@` symbol in front
+
+Here is an example. We created a new file `hello.md`, and when all the content is ready and you click Commit changes in the fourth step; since we have successfully deployed to the Cloudflare platform in the first step, if there are no surprises here, your changes will be automatically deployed to Cloudflare after you submit the code. Once the deployment is successful, you can access the newly added blog content through a URL like https://example.com/posts/hello.
+
+![newfile](@images/posts/gblog/3-newfile.png)
+
+## How to Edit the Project Online (Optional)
+
+If it is not convenient for you to modify and run the project locally, you can edit the blog content online through github.dev; the specific method is:
+
+1. Change the domain suffix in your project address, such as https://github.com//gblog, from `com` to `dev`
+2. Or directly press the `.` key (period in English input method) on the project page of GitHub
+
+![githubdev](@images/posts/gblog/4-githubdev.png)
+
+This will open an online editor based on VSCode, where you can modify any content you want. For more usage of github.dev, please refer to [github.dev web-based editor](https://docs.github.com/zh/codespaces/the-githubdev-web-based-editor).
+
+## How to Start the Project Locally (Optional)
+
+Before starting the project locally, make sure you have Git installed; you can open your computer terminal ([Windows](https://www.freecodecamp.org/chinese/news/how-to-open-the-command-prompt-in-windows-10-how-to-open-command-prompt-as-an-administrator/) & [MacOS](https://support.apple.com/zh-cn/guide/terminal/apdb66b5242-0d18-49fc-9c47-a2498b7c91d5/mac)) and enter `git --version` to confirm, which usually outputs the version information of the installed software, as shown below with my local version. If you haven't installed them yet, you can click the link at the end of the article to install them.
+
+![local](@images/posts/gblog/5-local.png)
+
+After the installation is successful, execute the following command in your terminal:
+
+```bash
+git clone git@github.com:yourname/your-blog.git myblog
+```
+
+The Git Clone command will download your project code to the myblog folder in the directory where the command is currently running. **Please note** to change the project address here to your project's address, as shown below:
+![ssh](@images/posts/gblog/7-ssh.png)
+
+You can choose the HTTPS type of project address or the SSH type. The former requires you to enter your GitHub account password every time you submit code, while the latter allows password-free submission. You can refer to [this article](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=windows) to configure SSH.
+
+Next, use the CD command to enter the blog directory and execute `npm install` to install dependencies. If this step fails or takes too long, you can try replacing the npm mirror with a domestic source, see [Taobao mirror setting tutorial](https://npmmirror.com/).
+
+```bash
+# Enter the myblog folder
+cd myblog
+
+# Install the dependencies required for the blog
+npm install
+
+# Start a local development preview version
+npm run dev
+```
+
+After the last command runs successfully, you should see a prompt like the one below, which means our blog has successfully run locally. You can visit http://localhost:4321/ to view the local preview version, and you can also open and edit it with any editor you are interested in, such as Sublime Text, VSCode, IDEA.
+
+![rundev](@images/posts/gblog/8-rundev.png)
+
+After the local modification is completed, you can submit these new changes to GitHub in the following way:
+
+```bash
+git add .
+git commit -m "Briefly describe the content of this modification"
+git push 
+```
+
+Whether you deploy your blog to Zeabur, Vercel, or Cloudflare, they will automatically deploy after you submit the code. This is usually because the platform service provider has automatically set up the corresponding triggers for us when we first integrated, so it can automatically deploy after submitting the code.
+
+## How to Customize
+
+The default blog template includes many preset configurations such as Logo/comments/SEO, default copywriting, etc. Please open the source code with any editor you like and edit them.
+
+### Custom Configuration
+
+Most of the blog configurations are defined in the `src/config.ts` file, and you can modify them to any look you want:
+
+```typescript
+export const SITE: Site = {
+    author: 'James Tsetsekas',
+    url: 'https://blog.JamesTsetsekas.com',
+    title: 'James Tsetsekas',
+    description: '\'s personal blog, I enjoy the process of building something using any technology stack',
+}
+```
+
+### Custom Images
+
+The blog currently uses the following images as system images, please replace them with your own images; if you need to change the file name, please search for all related file names globally and replace them together.
+
+```
+src/images/brand_logo.jpeg        Logo 
+src/images/default_home_og.png    Share blog homepage to social platforms such as Twitter to display the share image 
+src/images/favicon_icon.png       ICON
+src/images/favicon_icon.svg       ICON SVG format 
+src/images/footer.png             Placeholder image displayed on the right side of the page footer
+src/images/home.png               Homepage header image
+```
+
+### Custom Descriptions
+
+Some copywriting descriptions, such as "Life cannot be satisfactory everywhere, but we still have to live enthusiastically," are not placed in the configuration file. You need to search globally and find the corresponding files to modify them.
+
+### Custom Comments
+
+We currently use https://giscus.app/ as the comment system. You can refer to the Giscus official website to see how to configure them, or refer to **liruifengv**'s blog https://liruifengv.com/posts/add-comments-to-astro/.
+
+Note that blog comments are disabled by default. You can set the value of the COMMENT_ENABLE environment variable to true or directly modify them in the src/config.ts file.
+
+```typescript
+export const Settings = {
+    Comment: {
+        // enable: !!(import.meta.env.COMMENT_ENABLE),
+        enable: true,
+        giscus: {
+            repo: '/gblog',
+            repoId: 'MDEwOlJlcG9zaXRvcnkxMjcyODI0NzA',
+            category: 'Announcements',
+            categoryId: 'DIC_kwDOB5YtJs4CfZnX',
+            darkThem: 'noborder_gray',
+            lightThem: 'light',
+        },
+    },
+}
+```
+
+### Upload Resources to S3 for Faster Access
+
+We can upload all compiled resource files such as images/CSS/JS to the S3/R2 platform to speed up access; this feature is based on **Yufan**'s [astro-uploader](https://github.com/syhily/astro-uploader) tool. Please visit the project to see how to configure them.
+
+```typescript
+// src/config.ts
+export const Settings = {
+    Assets: {
+        uploadAssetsToS3: !!(import.meta.env.S3_ENABLE),
+        config: {
+            paths: ['assets'],
+            endpoint: import.meta.env.S3_ENDPOINT as string,
+            bucket: import.meta.env.S3_BUCKET as string,
+            accessKey: import.meta.env.S3_ACCESS_KEY as string,
+            secretAccessKey: import.meta.env.S3_SECRET_ACCESS_KEY as string,
+            root: 'gblog',
+        },
+    },
+}
+```
+
+The above configuration means that all files under the compiled assets folder will be uploaded to the gblog folder on the S3 server. This usually requires modifying the astro.config.mjs file as follows:
+
+```typescript
+// astro.config.mjs
+export default defineConfig({
+    build: {
+        assets: 'assets',
+        assetsPrefix: 'https://images.JamesTsetsekas.com/gblog',
+    },
+})
+```
+
+That is, through the build configuration, tell astro to package all resource files into the assets folder during compilation. After the compilation is completed, the program will automatically call [astro-uploader](https://github.com/syhily/astro-uploader) to upload these files to S3; so we also need to tell Astro to use the S3 path such as https://images.JamesTsetsekas.com/gblog as the prefix.
+
+Note that you may also need to set the corresponding environment variables on the corresponding deployment platform.
+
+## How to Add New Features
+
+The blog's UI uses [Preline UI](https://preline.co/), and you can copy the style files you want from their [Example](https://preline.co/examples.html) or [Template](https://preline.co/templates.html) and paste them directly into gblog. This usually does not require too many modifications to clone the effect you see.
+
+## References
+- [How to Clone This Site, Quickly Build a Blog | Cali Castle](https://cali.so/blog/guide-for-cloning-my-site)
+- [Download Node.js](https://nodejs.org/en/download/prebuilt-installer)
+* [Download Git](https://git-scm.com/downloads)
+* [Markdown Tutorial](https://www.markdowntutorial.com/zh-cn/)
+* [How to Open Command Prompt in Windows 10](https://www.freecodecamp.org/chinese/news/how-to-open-the-command-prompt-in-windows-10-how-to-open-command-prompt-as-an-administrator/)
+* [Run Commands and Tools in Terminal on Mac](https://support.apple.com/zh-cn/guide/terminal/apdb66b5242-0d18-49fc-9c47-a2498b7c91d5/mac)
+* [Git Guides](https://github.com/git-guides)
+* [Preline UI](https://preline.co/)
+* [ScrewFast Project](https://github.com/mearashadowfax/ScrewFast)
+* https://github.com/syhily/astro-uploader

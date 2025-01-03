@@ -1,18 +1,18 @@
 import type { NavigationLink, Site } from './types.ts'
 
 export const SITE: Site = {
-    author: 'Godruoyi',
-    url: 'https://godruoyi.com',
-    title: '连波的闲谈杂鱼',
-    description: 'Godruoyi\'s personal blog, I enjoy the process of building something using any technology stack',
+    author: 'James Tsetsekas',
+    url: 'https://blog.JamesTsetsekas.com',
+    title: 'James Tsetsekas',
+    description: 'JamesTsetsekas\'s personal blog, I enjoy the process of building something using any technology stack',
     shortDescription: '',
 }
 
 export const NavigationLinks: NavigationLink[] = [
     { name: 'Posts', url: '/posts' },
-    { name: 'Category', url: '/categories' },
+    { name: 'Categories', url: '/categories' },
     { name: 'Timeline', url: '/timeline' },
-    { name: 'About', url: '/posts/about-godruoyi' },
+    { name: 'About', url: '/posts/about-james-tsetsekas' },
     { name: 'Friends', url: '/friends' },
 ]
 
@@ -23,7 +23,7 @@ export const FooterLinks = [
             { name: 'Posts', url: '/posts' },
             { name: 'Timeline', url: '/timeline' },
             { name: 'Categories', url: '/categories' },
-            { name: 'About Me', url: '/posts/about-godruoyi' },
+            { name: 'About Me', url: '/posts/about-james-tsetsekas' },
         ],
     },
     {
@@ -31,7 +31,7 @@ export const FooterLinks = [
         links: [
             { name: 'RSS', url: '/rss.xml' },
             { name: 'Site Map', url: '/sitemap-index.xml' },
-            { name: 'Twitter', url: 'https://x.com/godruoyi' },
+            { name: 'Twitter', url: 'https://x.com/JamesTsetsekas' },
         ],
     },
 ]
@@ -56,7 +56,7 @@ export const Settings = {
         // please visit https://giscus.app/ to learn how to configure it.
         // You can also check out this article: https://liruifengv.com/posts/add-comments-to-astro/.
         giscus: {
-            repo: 'godruoyi/gblog',
+            repo: 'JamesTsetsekas/gblog',
             repoId: 'MDEwOlJlcG9zaXRvcnkxMjcyODI0NzA',
             category: 'Announcements',
             categoryId: 'DIC_kwDOB5YtJs4CfZnX',
@@ -75,7 +75,7 @@ export const Settings = {
             // The following configuration will upload the compiled `assets` folder to S3 or R2.
             // You can set a separate domain for it so that you can access all resources using a CDN domain name.
             //
-            // For example: https://images.godruoyi.com/gblog/assets/brand-logo.webp
+            // For example: https://images.JamesTsetsekas.com/gblog/assets/brand-logo.webp
             //
             // Note that you may also need to modify `build.assetsPrefix` in `astro.config.mjs` if you want to
             // automatically replace all images/js/css with a CDN link.

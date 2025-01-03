@@ -1,10 +1,10 @@
 # Gblog is an open-source, simple, and beautiful blog built with Astro.
 
-![godruoyi gblog](https://images.godruoyi.com/logos/gblog-1.png)
+![JamesTsetsekas gblog](https://images.JamesTsetsekas.com/logos/gblog-1.png)
 
 Gblog is a blog template designed for those who are unable or unwilling to write frontend code. All you need to do is find an interesting Tailwind CSS template from elsewhere and paste it into Gblog, and it will function seamlessly. Additionally, you can customize your own blog without to write any JavaScript code.
 
-**[View Live Demo](https://godruoyi.com)**
+**[View Live Demo](https://blog.JamesTsetsekas.com)**
 
 ## Features
 
@@ -21,7 +21,7 @@ Gblog is a blog template designed for those who are unable or unwilling to write
 
 You can use this template directly to build your own blog in four different ways.
 
-https://github.com/godruoyi/gblog/assets/16079222/773cd885-d4b7-482d-818f-566606e70b90
+https://github.com/JamesTsetsekas/gblog/assets/16079222/773cd885-d4b7-482d-818f-566606e70b90
 
 ### Deploy to Zeabur
 
@@ -31,11 +31,11 @@ Click the button above to build your blog to Zeabur within one minute.
 
 ### Deploy to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fgodruoyi%2Fgblog%2Ftree%2Fgblog-template&project-name=gblog&repository-name=my-gblog&demo-title=%E8%BF%9E%E6%B3%A2%E7%9A%84%E9%97%B2%E8%B0%88%E6%9D%82%E9%B1%BC&demo-description=Godruoyi's%20private%20blog&demo-url=https%3A%2F%2Fgodruoyi.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJamesTsetsekas%2Fgblog%2Ftree%2Fgblog-template&project-name=gblog&repository-name=my-gblog&demo-title=%E8%BF%9E%E6%B3%A2%E7%9A%84%E9%97%B2%E8%B0%88%E6%9D%82%E9%B1%BC&demo-description=JamesTsetsekas's%20private%20blog&demo-url=https%3A%2F%2FJamesTsetsekas.com)
 
 ### Build from Source
 
-1. Clone the `gblog-template` branch of this repository `git clone -b gblog-template git@github.com:godruoyi/gblog.git`
+1. Clone the `gblog-template` branch of this repository `git clone -b gblog-template git@github.com:JamesTsetsekas/gblog.git`
 2. Execute `pnpm install` to install dependencies.
 3. Modify the `src/config.ts` file to what you want.
 4. Execute `pnpm run dev`: Starts a local development server with hot reloading enabled.
@@ -43,7 +43,7 @@ Click the button above to build your blog to Zeabur within one minute.
 ### Build from Astro Template(coming soon)
 
 ```
-pnpm create astro@latest -- --template godruoyi/gblog
+pnpm create astro@latest -- --template JamesTsetsekas/gblog
 ```
 
 ### Development Commands
@@ -62,4 +62,4 @@ Thanks https://github.com/mearashadowfax/ScrewFast, The majority of the code for
 
 ## License
 
-This project is released under the MIT License. Please read the [LICENSE](https://github.com/godruoyi/gblog/blob/astro/LICENSE) file for more details.
+This project is released under the MIT License. Please read the [LICENSE](https://github.com/JamesTsetsekas/gblog/blob/astro/LICENSE) file for more details.

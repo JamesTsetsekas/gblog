@@ -12,7 +12,7 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
 )
 
 const selectedPosts: CollectionEntry<'posts'>[] = posts.filter(p => p.data.selected)
-const description = 'Here are some articles that Godruoyi believes are not bad, hope you enjoy them.'
+const description = 'Here are some articles that James Tsetsekas believes are not bad, hope you enjoy them.'
 const URL = Astro.url.href
 ---
 
@@ -36,8 +36,8 @@ const URL = Astro.url.href
     }}
 >
     <MainSection
-        title="Write you want"
-        subTitle="生活不能让人处处满意，但我们还要热情的生活下去"
+        title="Posts"
+        subTitle="Life cannot always be satisfying, but we must continue to live with enthusiasm"
         btnExists={true}
         btnTitle="All Posts"
         btnURL="/timeline"
