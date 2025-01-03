@@ -58,6 +58,7 @@ For detailed help with Astro CLI commands, visit [Astro's documentation](https:/
 
 ## Thanks 
 
+Thanks https://github.com/godruoyi/gblog, The majority of the code for this project comes from Godruoyi.
 Thanks https://github.com/mearashadowfax/ScrewFast, The majority of the code for this project comes from ScrewFast.
 
 ## License
