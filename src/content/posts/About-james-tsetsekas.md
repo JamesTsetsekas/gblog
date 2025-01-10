@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 description: "James Tsetsekas, a Full Stack Web Developer specializing in building applications using Node.Js, PHP, and Python."
-pubDate: "2024-01-01 00:00:00"
+pubDate: "2025-01-01 00:00:00"
 category: "life"
 banner: "@images/banners/James-Tsetsekas-Suit-cropped.jpeg"
 tags: ["life"]

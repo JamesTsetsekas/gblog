@@ -1,7 +1,7 @@
 ---
 title: "Migrate Umbrel os from raspberry pi to x86"
 description: "A step-by-step guide on migrating UmbrelOS from a Raspberry Pi to an x86 PC, ensuring data preservation and minimal downtime."
-pubDate: "2024-01-01 00:00:00"
+pubDate: "2025-01-10 00:00:00"
 category: "technology"
 banner: "@images/banners/umbrel-migration.png"
 tags: ["UmbrelOS", "Raspberry Pi", "x86", "migration"]
