@@ -20,7 +20,7 @@ const categoriesURL = `${Astro.url.origin}/categories`
 const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
     (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).filter((b) => {
-    return b.data.category === category.slug
+    return b.data.category.includes(category.slug)
 });
 ---
 

@@ -13,7 +13,7 @@ const posts = defineCollection({
         // The article OG cover, if not provided, use summary card, otherwise summary_large_image
         ogImage: image().or(z.string()).optional(),
 
-        category: z.string(),
+        category: z.array(z.string()),
         pubDate: z.coerce.date(),
 
         // Should the article be added to SELECTED POSTS? will be displayed on the /posts page if true.

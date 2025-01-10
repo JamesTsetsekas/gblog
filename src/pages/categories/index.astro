@@ -10,19 +10,19 @@ import { SITE } from '@/config'
 const postMap: Map<string, CollectionEntry<'posts'>[]> = (await getCollection('posts')).sort(
     (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 ).reduce((acc, obj) => {
-    let posts = acc.get(obj.data.category)
-    if (!posts) {
-        posts = []
-    }
-    posts.push(obj)
-
-    acc.set(obj.data.category, posts)
-
+    obj.data.category.forEach(cat => {
+        let posts = acc.get(cat)
+        if (!posts) {
+            posts = []
+        }
+        posts.push(obj)
+        acc.set(cat, posts)
+    })
     return acc
 }, new Map<string, CollectionEntry<'posts'>[]>())
 
 const categories = await getCollection('categories')
-const description = 'Here are some categories that James Tsetsekas is interested in, including Laravel, Golang, and her life.'
+const description = 'Here are some categories that James Tsetsekas is interested in, including Technology, Bitcoin, and life.'
 const URL = Astro.url.href
 ---
 
@@ -44,7 +44,6 @@ const URL = Astro.url.href
             'description': SITE.description,
         },
     }}
-
 >
     <MainSection title="Categories" subTitle={description} />
 

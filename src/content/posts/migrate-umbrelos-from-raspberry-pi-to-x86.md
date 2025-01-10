@@ -2,9 +2,9 @@
 title: "Migrate Umbrel os from raspberry pi to x86"
 description: "A step-by-step guide on migrating UmbrelOS from a Raspberry Pi to an x86 PC, ensuring data preservation and minimal downtime."
 pubDate: "2025-01-10 00:00:00"
-category: "technology"
+category: ["bitcoin","lightning","linux","technology"]
 banner: "@images/banners/umbrel-migration.png"
-tags: ["UmbrelOS", "Raspberry Pi", "x86", "migration"]
+tags: ["UmbrelOS", "Raspberry Pi", "x86", "Bitcoin", "Lightning"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["UmbrelOS migration", "Raspberry Pi to x86", "blockchain data preservation"]
