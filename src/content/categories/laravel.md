@@ -1,4 +1,4 @@
 ---
 title: 'Laravel'
-description: 'PHP'
+description: 'A PHP framework for web artisans'
 ---

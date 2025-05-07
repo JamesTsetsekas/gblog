@@ -2,7 +2,7 @@
 title: "Shelling Out: Nick Szabo's Pioneering Theory on the Origins of Money"
 description: "Nick Szabo's Shelling Out explores the evolutionary origins of money, tracing how collectibles like wampum shells enabled cooperation and wealth transfer in early human societies."
 pubDate: "2025-05-07 00:00:00"
-category: ["economics", "anthropology", "bitcoin", "monetary history"]
+category: ["economics", "anthropology", "bitcoin", "monetary history", "books"]
 banner: "@images/banners/shelling-out.png"
 tags: ["Nick Szabo", "Shelling Out", "Money Origins", "Collectibles", "Wampum"]
 oldViewCount: 0

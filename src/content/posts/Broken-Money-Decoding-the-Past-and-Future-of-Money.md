@@ -2,7 +2,7 @@
 title: "Broken Money: Decoding the Past, Present, and Future of Money with Lyn Alden"
 description: "Lyn Alden's Broken Money explores the evolution of money through technology, critiques the failing fiat system, and highlights Bitcoin's potential to reshape global finance."
 pubDate: "2025-05-06 00:00:00"
-category: ["bitcoin", "economics", "finance", "technology"]
+category: ["bitcoin", "economics", "finance", "technology", "books"]
 banner: "@images/banners/broken-money.png"
 tags: ["Lyn Alden", "Broken Money", "Bitcoin", "Fiat Currency", "Monetary History"]
 oldViewCount: 0

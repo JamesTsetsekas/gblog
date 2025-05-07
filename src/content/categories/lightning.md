@@ -1,4 +1,4 @@
 ---
 title: 'Lightning ⚡'
-description: 'Books'
+description: 'Exploring the Bitcoin Lightning Network'
 ---

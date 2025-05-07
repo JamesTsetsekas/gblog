@@ -2,7 +2,7 @@
 title: "The Bitcoin Standard: A Vision for Sound Money in a Digital Age"
 description: "Saifedean Ammous' The Bitcoin Standard explores the history of money, the flaws of fiat currencies, and Bitcoin's potential as a decentralized, sound money alternative."
 pubDate: "2025-05-04 00:00:00"
-category: ["bitcoin", "economics", "finance", "technology"]
+category: ["bitcoin", "economics", "finance", "technology", "books"]
 banner: "@images/banners/the-bitcoin-standard.png"
 tags: ["Bitcoin", "Sound Money", "Fiat Currency", "Decentralization", "Economics"]
 oldViewCount: 0

@@ -2,7 +2,7 @@
 title: "The Evolutionary Roots of Money: How Scarcity Shaped Humanity and Bitcoin"
 description: "Exploring how Homo sapiens' obsession with scarcity, from ancient shell beads to Bitcoin, drove our evolutionary success and the future of money."
 pubDate: "2025-05-01 00:00:00"
-category: ["bitcoin", "anthropology", "economics", "neuroscience"]
+category: ["bitcoin", "anthropology", "economics", "neuroscience", "books"]
 banner: "@images/banners/Once-In-a-species.jpg"
 tags: ["Bitcoin", "Money", "Scarcity", "Homo sapiens", "Neanderthals"]
 oldViewCount: 0

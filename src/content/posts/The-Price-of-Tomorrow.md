@@ -2,7 +2,7 @@
 title: "The Price of Tomorrow: Embracing Deflation for an Abundant Future"
 description: "Jeff Booth's The Price of Tomorrow argues that technology-driven deflation is inevitable, challenging our debt-fueled economy and offering a path to abundance through Bitcoin and systemic change."
 pubDate: "2025-05-03 00:00:00"
-category: ["bitcoin", "economics", "technology", "deflation"]
+category: ["bitcoin", "economics", "technology", "deflation", "books"]
 banner: "@images/banners/the-price-of-tomorrow.png"
 tags: ["Jeff Booth", "Deflation", "Bitcoin", "Technology", "Economy"]
 oldViewCount: 0
