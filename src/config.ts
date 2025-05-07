@@ -32,6 +32,9 @@ export const FooterLinks = [
             { name: 'RSS', url: '/rss.xml' },
             { name: 'Site Map', url: '/sitemap-index.xml' },
             { name: 'Twitter', url: 'https://x.com/JamesTsetsekas' },
+            { name: 'Jamesco Web', url: 'https://jamescowebdesigns.com/' },
+            { name: 'Portfolio', url: 'https://jamestsetsekas.com/' },
+
         ],
     },
 ]
