@@ -46,7 +46,7 @@ With the FASB rule change removing a major accounting barrier, I believe 2025 wi
 
 ### Challenges and Criticisms
 
-Despite the momentum, challenges remain. Bitcoin's volatility—evidenced by a 12% drop in Q1 2025—poses risks of unrealized losses, as seen during past bear markets. The FASB rule, while beneficial, introduces earnings volatility, as price swings now directly impact net income. Regulatory uncertainties, particularly around environmental concerns tied to mining, and complex custody requirements for public companies add friction. Critics also argue that focusing on Bitcoin can distract from core business operations, as some say MicroStrategy's software business has been overshadowed by its crypto strategy.
+Despite the momentum, challenges remain. Bitcoin's volatility—evidenced by a 12% drop in Q1 2025—poses risks of unrealized losses, as seen during past bear markets. The FASB rule, while beneficial, introduces earnings volatility, as price swings now directly impact net income. Regulatory uncertainties, particularly around environmental concerns tied to mining, and complex custody requirements for public companies add friction. Critics also argue that focusing on Bitcoin can distract from core business operations, as some say MicroStrategy's software business has been overshadowed by its Bitcoin strategy.
 
 However, these risks are increasingly mitigated by better custody solutions (e.g., Metaplanet's partnership with Hoseki) and market maturity. The reputational risk of holding Bitcoin has faded as it becomes a mainstream financial instrument, with reduced use in illicit transactions.
 

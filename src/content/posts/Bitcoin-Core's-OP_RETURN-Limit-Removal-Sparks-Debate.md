@@ -10,7 +10,7 @@ selected: true
 oldKeywords: ["Bitcoin Core OP_RETURN", "limit removal debate", "blockchain spam concerns"]
 ---
 
-On May 5, 2025, Bitcoin Core developers announced a controversial decision to remove the 80-byte limit on OP_RETURN outputs in the next software release, as detailed in a GitHub post by developer Greg Sanders. This change, formalized in pull requests #32359 and #32406, eliminates restrictions on embedding arbitrary data in Bitcoin transactions, a move that has ignited fierce debate within the crypto community. While supporters argue it aligns policy with real-world usage and improves network efficiency, critics warn it risks bloating the blockchain and diluting Bitcoin's financial focus. Here's a breakdown of the decision, its implications, and the community's divided response.
+On May 5, 2025, Bitcoin Core developers announced a controversial decision to remove the 80-byte limit on OP_RETURN outputs in the next software release, as detailed in a GitHub post by developer Greg Sanders. This change, formalized in pull requests #32359 and #32406, eliminates restrictions on embedding arbitrary data in Bitcoin transactions, a move that has ignited fierce debate within the Bitcoin community. While supporters argue it aligns policy with real-world usage and improves network efficiency, critics warn it risks bloating the blockchain and diluting Bitcoin's financial focus. Here's a breakdown of the decision, its implications, and the community's divided response.
 
 > Read the announcement: [GitHub PR #32359](https://github.com/bitcoin/bitcoin/pull/32359)
 

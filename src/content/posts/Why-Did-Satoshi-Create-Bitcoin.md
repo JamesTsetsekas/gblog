@@ -1,5 +1,5 @@
 ---
-title: "Why did Satoshi Nakamoto to Create Bitcoin?"
+title: "Why did Satoshi Nakamoto Create Bitcoin?"
 description: "Exploring the motivations behind the creation of the world's first decentralized currency and how it was designed as a response to the 2008 financial crisis."
 pubDate: "2025-05-12 12:00:00"
 category: ["bitcoin", "finance", "technology", "economics", "history"]
