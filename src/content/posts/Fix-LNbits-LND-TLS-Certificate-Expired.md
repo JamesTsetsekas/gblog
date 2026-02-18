@@ -3,7 +3,7 @@ title: "Fix: LNbits Stopped Working — LND TLS Certificate Expired"
 description: "How to diagnose and fix an expired LND TLS certificate on Umbrel that silently breaks LNbits and other services connecting over gRPC."
 pubDate: "2026-02-18 00:00:00"
 category: ["lightning", "technology", "linux"]
-banner: ""
+banner: "@images/banners/satoshi.png"
 tags: ["LND", "LNbits", "Umbrel", "TLS", "Lightning Network", "Self-Hosted", "Troubleshooting"]
 oldViewCount: 0
 selected: false
