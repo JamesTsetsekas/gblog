@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Prompt injection trust boundary</title>
+  <desc id="desc">Untrusted content enters an AI model, but typed tools, policy checks, and approval gates stand between the model and privileged systems.</desc>
+  <rect width="1200" height="675" rx="36" fill="#0f172a"/>
+  <text x="65" y="78" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="34" font-weight="700">The model is inside the threat boundary</text>
+  <g font-family="system-ui, sans-serif">
+    <rect x="65" y="190" width="240" height="170" rx="22" fill="#3f2633" stroke="#fb7185" stroke-width="3"/>
+    <text x="185" y="250" fill="#fecdd3" font-size="25" text-anchor="middle" font-weight="700">Untrusted content</text>
+    <text x="185" y="292" fill="#fda4af" font-size="18" text-anchor="middle">web · email · docs</text>
+    <text x="185" y="320" fill="#fda4af" font-size="18" text-anchor="middle">issues · retrieved text</text>
+    <path d="M305 275h90" stroke="#94a3b8" stroke-width="5"/><path d="M380 260l20 15-20 15" fill="none" stroke="#94a3b8" stroke-width="5"/>
+    <rect x="400" y="190" width="230" height="170" rx="22" fill="#173e53" stroke="#22d3ee" stroke-width="3"/>
+    <text x="515" y="250" fill="#cffafe" font-size="25" text-anchor="middle" font-weight="700">AI agent</text>
+    <text x="515" y="292" fill="#67e8f9" font-size="18" text-anchor="middle">plans and proposes</text>
+    <text x="515" y="320" fill="#67e8f9" font-size="18" text-anchor="middle">treat output as data</text>
+    <path d="M630 275h90" stroke="#94a3b8" stroke-width="5"/><path d="M705 260l20 15-20 15" fill="none" stroke="#94a3b8" stroke-width="5"/>
+    <rect x="725" y="145" width="210" height="260" rx="22" fill="#44340e" stroke="#f59e0b" stroke-width="4"/>
+    <text x="830" y="205" fill="#fef3c7" font-size="24" text-anchor="middle" font-weight="700">Control plane</text>
+    <text x="830" y="250" fill="#fcd34d" font-size="18" text-anchor="middle">typed tools</text>
+    <text x="830" y="285" fill="#fcd34d" font-size="18" text-anchor="middle">least privilege</text>
+    <text x="830" y="320" fill="#fcd34d" font-size="18" text-anchor="middle">policy checks</text>
+    <text x="830" y="355" fill="#fcd34d" font-size="18" text-anchor="middle">human approval</text>
+    <path d="M935 275h90" stroke="#94a3b8" stroke-width="5"/><path d="M1010 260l20 15-20 15" fill="none" stroke="#94a3b8" stroke-width="5"/>
+    <rect x="1030" y="190" width="105" height="170" rx="22" fill="#1f2937" stroke="#64748b" stroke-width="3"/>
+    <text x="1082" y="252" fill="#e2e8f0" font-size="20" text-anchor="middle" font-weight="700">Shell</text>
+    <text x="1082" y="282" fill="#94a3b8" font-size="17" text-anchor="middle">files</text>
+    <text x="1082" y="310" fill="#94a3b8" font-size="17" text-anchor="middle">network</text>
+  </g>
+  <path d="M700 115v360" stroke="#f59e0b" stroke-width="4" stroke-dasharray="10 10"/>
+  <text x="683" y="500" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="19" text-anchor="end">privilege boundary</text>
+  <text x="600" y="615" fill="#64748b" font-family="system-ui, sans-serif" font-size="17" text-anchor="middle">Threat model by James Tsetsekas; informed by Microsoft and Google security guidance</text>
+</svg>

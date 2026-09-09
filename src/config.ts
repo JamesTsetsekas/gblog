@@ -4,8 +4,8 @@ export const SITE: Site = {
     author: 'James Tsetsekas',
     url: 'https://blog.JamesTsetsekas.com',
     title: 'James Tsetsekas',
-    description: 'JamesTsetsekas\'s personal blog, I enjoy the process of building something using any technology stack',
-    shortDescription: '',
+    description: 'Notes on Bitcoin, Nostr, Lightning, security, AI, and product engineering from James Tsetsekas.',
+    shortDescription: 'Bitcoin, Nostr, security, AI, and product engineering.',
 }
 
 export const NavigationLinks: NavigationLink[] = [
