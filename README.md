@@ -1,66 +1,59 @@
-# Gblog is an open-source, simple, and beautiful blog built with Astro.
+# James Tsetsekas — Blog
 
-![JamesTsetsekas gblog](https://images.JamesTsetsekas.com/logos/gblog-1.png)
+Source for [blog.JamesTsetsekas.com](https://blog.JamesTsetsekas.com), a personal publication about Bitcoin, Nostr, Lightning, security, AI, and product engineering.
 
-Gblog is a blog template designed for those who are unable or unwilling to write frontend code. All you need to do is find an interesting Tailwind CSS template from elsewhere and paste it into Gblog, and it will function seamlessly. Additionally, you can customize your own blog without to write any JavaScript code.
+The site is a static [Astro](https://astro.build/) application with Markdown and MDX content, category pages, RSS, a sitemap, responsive images, light and dark themes, and optional analytics and comments.
 
-**[View Live Demo](https://blog.JamesTsetsekas.com)**
+## Development
 
-## Features
+Requirements: a current Node.js release and npm.
 
-- 🐈 Simple And Beautiful
-- 🖥️️ Responsive And Light/Dark mode
-- 🐛 SiteMap & RSS Feed
-- 🐝 Category and Timeline Support
-- 🍋 Google Analytics & Google Structured Data
-- 🐜 SEO and Responsiveness
-- 🪲 Markdown And MDX
-- 🏂🏾 Page Compression & Image Optimization
-
-## Make Your Own
-
-You can use this template directly to build your own blog in four different ways.
-
-https://github.com/JamesTsetsekas/gblog/assets/16079222/773cd885-d4b7-482d-818f-566606e70b90
-
-### Deploy to Zeabur
-
-[![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/6FMSVU)
-
-Click the button above to build your blog to Zeabur within one minute.
-
-### Deploy to Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FJamesTsetsekas%2Fgblog%2Ftree%2Fgblog-template&project-name=gblog&repository-name=my-gblog&demo-title=%E8%BF%9E%E6%B3%A2%E7%9A%84%E9%97%B2%E8%B0%88%E6%9D%82%E9%B1%BC&demo-description=JamesTsetsekas's%20private%20blog&demo-url=https%3A%2F%2FJamesTsetsekas.com)
-
-### Build from Source
-
-1. Clone the `gblog-template` branch of this repository `git clone -b gblog-template git@github.com:JamesTsetsekas/gblog.git`
-2. Execute `pnpm install` to install dependencies.
-3. Modify the `src/config.ts` file to what you want.
-4. Execute `pnpm run dev`: Starts a local development server with hot reloading enabled.
-
-### Build from Astro Template(coming soon)
-
-```
-pnpm create astro@latest -- --template JamesTsetsekas/gblog
+```bash
+npm ci
+npm run dev
 ```
 
-### Development Commands
+The local development server starts with hot reload. Before opening a pull request, run:
 
-With dependencies installed, you can utilize the following npm scripts to manage your project's development lifecycle:
+```bash
+npm run lint
+npm run build
+```
 
-- `pnpm run dev`: Starts a local development server with hot reloading enabled.
-- `pnpm run preview`: Serves your build output locally for preview before deployment.
-- `pnpm run build`: Bundles your site into static files for production.
+Use `npm run preview` to inspect the production build locally.
 
-For detailed help with Astro CLI commands, visit [Astro's documentation](https://docs.astro.build/en/reference/cli-reference/).
+## Content structure
 
-## Thanks 
+- `src/content/posts/` — Markdown and MDX articles
+- `src/content/categories/` — category names and descriptions
+- `src/images/banners/` — local article banners
+- `src/images/posts/` — inline diagrams and supporting article images
+- `src/config.ts` — site metadata, navigation, analytics, comments, and asset configuration
 
-Thanks https://github.com/godruoyi/gblog, The majority of the code for this project comes from Godruoyi.
-Thanks https://github.com/mearashadowfax/ScrewFast, The majority of the code for this project comes from ScrewFast.
+Posts use Astro content collections. A minimal article looks like this:
+
+```yaml
+---
+title: "Article title"
+description: "A concise summary for previews and search results."
+pubDate: "2026-09-09 12:00:00"
+category: ["bitcoin", "security"]
+banner: "@images/banners/example.png"
+tags: ["Bitcoin", "Security"]
+selected: false
+---
+```
+
+Use a local 16:9 banner when possible, write descriptive alt text for inline images, and attribute external data or diagrams next to the visual. Add a matching file in `src/content/categories/` before assigning a new category.
+
+## Production and assets
+
+`npm run build` creates a static site. Image optimization can be enabled with `ASTRO_IMAGE_OPTIMIZE`. The optional `S3_*` configuration uploads built assets through `astro-uploader`; without it, assets remain part of the normal static build. Never commit credentials or local environment files.
+
+## Credits
+
+The original theme and much of the site foundation came from [godruoyi/gblog](https://github.com/godruoyi/gblog) and [mearashadowfax/ScrewFast](https://github.com/mearashadowfax/ScrewFast). This repository has since been adapted for James’s publication and content workflow.
 
 ## License
 
-This project is released under the MIT License. Please read the [LICENSE](https://github.com/JamesTsetsekas/gblog/blob/astro/LICENSE) file for more details.
+Released under the [MIT License](LICENSE).

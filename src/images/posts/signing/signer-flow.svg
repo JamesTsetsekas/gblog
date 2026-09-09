@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Nostr signer authorization flow</title>
+  <desc id="desc">An application proposes an event, an external signer shows the meaning and asks for consent, then returns only a signature before the event is published.</desc>
+  <rect width="1200" height="675" rx="36" fill="#0f172a"/>
+  <text x="65" y="80" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="34" font-weight="700">Signing should be a visible authorization</text>
+  <g font-family="system-ui, sans-serif">
+    <rect x="65" y="190" width="265" height="250" rx="24" fill="#172d42" stroke="#22d3ee" stroke-width="3"/>
+    <text x="197" y="245" fill="#cffafe" font-size="25" text-anchor="middle" font-weight="700">Application</text>
+    <text x="197" y="300" fill="#67e8f9" font-size="18" text-anchor="middle">builds unsigned event</text>
+    <text x="197" y="335" fill="#67e8f9" font-size="18" text-anchor="middle">kind · tags · content</text>
+    <text x="197" y="370" fill="#67e8f9" font-size="18" text-anchor="middle">never receives secret key</text>
+    <path d="M330 275h130" stroke="#94a3b8" stroke-width="5"/><path d="M440 260l20 15-20 15" fill="none" stroke="#94a3b8" stroke-width="5"/>
+    <rect x="460" y="145" width="280" height="340" rx="26" fill="#44340e" stroke="#f59e0b" stroke-width="4"/>
+    <text x="600" y="205" fill="#fef3c7" font-size="25" text-anchor="middle" font-weight="700">External signer</text>
+    <text x="600" y="265" fill="#fcd34d" font-size="18" text-anchor="middle">explains intended action</text>
+    <text x="600" y="305" fill="#fcd34d" font-size="18" text-anchor="middle">shows requesting app</text>
+    <text x="600" y="345" fill="#fcd34d" font-size="18" text-anchor="middle">applies permissions</text>
+    <rect x="520" y="385" width="160" height="58" rx="29" fill="#f59e0b"/>
+    <text x="600" y="421" fill="#111827" font-size="19" text-anchor="middle" font-weight="700">Approve / deny</text>
+    <path d="M740 275h130" stroke="#94a3b8" stroke-width="5"/><path d="M850 260l20 15-20 15" fill="none" stroke="#94a3b8" stroke-width="5"/>
+    <rect x="870" y="190" width="265" height="250" rx="24" fill="#292348" stroke="#a78bfa" stroke-width="3"/>
+    <text x="1002" y="245" fill="#ede9fe" font-size="25" text-anchor="middle" font-weight="700">Relays</text>
+    <text x="1002" y="300" fill="#c4b5fd" font-size="18" text-anchor="middle">receive signed event</text>
+    <text x="1002" y="335" fill="#c4b5fd" font-size="18" text-anchor="middle">verify signature</text>
+    <text x="1002" y="370" fill="#c4b5fd" font-size="18" text-anchor="middle">distribute by policy</text>
+    <path d="M600 485v75H197v-120" fill="none" stroke="#34d399" stroke-width="4" stroke-dasharray="10 9"/>
+    <text x="390" y="548" fill="#6ee7b7" font-size="18" text-anchor="middle">signature returns; private key does not</text>
+    <text x="600" y="625" fill="#64748b" font-size="17" text-anchor="middle">Conceptual NIP-07 / NIP-46 flow by James Tsetsekas</text>
+  </g>
+</svg>
