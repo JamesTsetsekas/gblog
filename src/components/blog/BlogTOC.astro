@@ -1,0 +1,76 @@
+---
+import type { MarkdownHeading } from 'astro'
+
+interface Props {
+    headings: MarkdownHeading[]
+}
+
+interface Section {
+    heading: MarkdownHeading
+    children: MarkdownHeading[]
+}
+
+const { headings } = Astro.props
+const rootDepth = headings.some(heading => heading.depth === 2) ? 2 : 3
+const sections = headings.reduce<Section[]>((items, heading) => {
+    if (heading.depth === rootDepth) {
+        items.push({ heading, children: [] })
+    }
+    else if (rootDepth === 2 && heading.depth === 3 && items.length > 0) {
+        items[items.length - 1].children.push(heading)
+    }
+    return items
+}, [])
+---
+
+{
+    sections.length > 0 && (
+        <nav aria-label="Article contents" class="mb-10 border-y border-neutral-300/70 py-2 dark:border-neutral-700">
+            <details data-blog-toc>
+                <summary class="cursor-pointer py-3 text-sm font-semibold text-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 dark:text-neutral-200">
+                    On this page
+                </summary>
+                <ol class="grid gap-x-8 gap-y-3 pb-4 pt-2 text-sm leading-relaxed md:grid-cols-2">
+                    {sections.map(({ heading, children }) => (
+                        <li>
+                            <a class="toc-link font-medium" href={`#${heading.slug}`}>{heading.text}</a>
+                            {children.length > 0 && (
+                                <ol class="mt-2 space-y-2 border-l border-neutral-300 pl-4 dark:border-neutral-700">
+                                    {children.map(child => (
+                                        <li><a class="toc-link" href={`#${child.slug}`}>{child.text}</a></li>
+                                    ))}
+                                </ol>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </details>
+        </nav>
+    )
+}
+
+<script>
+function initContents() {
+    document.querySelectorAll<HTMLDetailsElement>('[data-blog-toc]').forEach((contents) => {
+        if (contents.dataset.initialized) {
+            return
+        }
+        contents.dataset.initialized = 'true'
+        contents.open = window.matchMedia('(min-width: 768px)').matches
+    })
+}
+
+initContents()
+document.addEventListener('astro:page-load', initContents)
+</script>
+
+<style>
+.toc-link {
+    @apply text-neutral-600 underline-offset-4 hover:text-orange-500 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-400 dark:text-neutral-400 dark:hover:text-orange-300;
+}
+
+:global([data-post-content] h2),
+:global([data-post-content] h3) {
+    scroll-margin-top: 7rem;
+}
+</style>
