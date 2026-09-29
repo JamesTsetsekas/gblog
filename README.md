@@ -46,6 +46,14 @@ selected: false
 
 Use a local 16:9 banner when possible, write descriptive alt text for inline images, and attribute external data or diagrams next to the visual. Add a matching file in `src/content/categories/` before assigning a new category.
 
+Articles with at least three second-level headings automatically display a collapsible table of contents. Set `toc: true` or `toc: false` in frontmatter to override this. Code blocks gain a copy button when JavaScript is available.
+
+## Comments
+
+Comments and reactions use [Giscus](https://giscus.app/) with this repository's GitHub Discussions and Announcements category. The repository and category IDs in `src/config.ts` belong to `JamesTsetsekas/gblog`.
+
+Install the [Giscus GitHub app](https://github.com/apps/giscus) for this repository, then set `COMMENT_ENABLE=true` in the build environment. Set it to `false` to disable comments; an unset value currently leaves comments disabled. The widget uses English, strict pathname matching, and the blog's light/dark theme. Readers sign in with GitHub to participate, and maintainers moderate comments in GitHub Discussions.
+
 ## Production and assets
 
 `npm run build` creates a static site. Image optimization can be enabled with `ASTRO_IMAGE_OPTIMIZE`. The optional `S3_*` configuration uploads built assets through `astro-uploader`; without it, assets remain part of the normal static build. Never commit credentials or local environment files.

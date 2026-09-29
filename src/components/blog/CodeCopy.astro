@@ -1,0 +1,85 @@
+<script>
+function initCodeCopy() {
+    document.querySelectorAll<HTMLElement>('[data-post-content] pre').forEach((pre, index) => {
+        const code = pre.querySelector('code')
+        if (!code || pre.closest('.code-block')) {
+            return
+        }
+
+        const wrapper = document.createElement('div')
+        wrapper.className = 'code-block'
+        const toolbar = document.createElement('div')
+        toolbar.className = 'code-toolbar'
+        const button = document.createElement('button')
+        button.type = 'button'
+        button.className = 'code-copy-button'
+        button.textContent = 'Copy code'
+        button.setAttribute('aria-label', `Copy code block ${index + 1}`)
+        const status = document.createElement('span')
+        status.className = 'sr-only'
+        status.setAttribute('role', 'status')
+        status.setAttribute('aria-live', 'polite')
+
+        pre.before(wrapper)
+        wrapper.append(toolbar, pre)
+        toolbar.append(button, status)
+
+        let feedbackTimeout: ReturnType<typeof setTimeout>
+        let copying = false
+        button.addEventListener('click', async () => {
+            if (copying) {
+                return
+            }
+            clearTimeout(feedbackTimeout)
+            copying = true
+            button.setAttribute('aria-busy', 'true')
+            status.textContent = ''
+            try {
+                await navigator.clipboard.writeText(code.textContent ?? '')
+                button.textContent = 'Copied'
+                status.textContent = 'Code copied to clipboard.'
+            }
+            catch {
+                const selection = window.getSelection()
+                const range = document.createRange()
+                range.selectNodeContents(code)
+                selection?.removeAllRanges()
+                selection?.addRange(range)
+                button.textContent = 'Code selected'
+                status.textContent = 'Automatic copying is unavailable. Code selected; use your device\'s copy command.'
+            }
+            finally {
+                copying = false
+                button.removeAttribute('aria-busy')
+                feedbackTimeout = setTimeout(() => {
+                    button.textContent = 'Copy code'
+                    status.textContent = ''
+                }, 3000)
+            }
+        })
+    })
+}
+
+initCodeCopy()
+document.addEventListener('astro:page-load', initCodeCopy)
+</script>
+
+<style is:global>
+[data-post-content] .code-block {
+    @apply my-6 overflow-hidden rounded-md border border-neutral-300 dark:border-neutral-700;
+}
+
+[data-post-content] .code-toolbar {
+    @apply flex justify-end border-b border-neutral-300 bg-neutral-50 px-2 dark:border-neutral-700 dark:bg-neutral-800;
+}
+
+[data-post-content] .code-copy-button {
+    @apply min-h-11 px-3 text-xs font-medium text-neutral-600 hover:text-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-orange-400 dark:text-neutral-300 dark:hover:text-orange-300;
+    font-family: inherit;
+}
+
+[data-post-content] .code-block pre {
+    margin: 0;
+    border-radius: 0;
+}
+</style>

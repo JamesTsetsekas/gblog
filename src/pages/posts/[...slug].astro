@@ -2,10 +2,11 @@
 import { type CollectionEntry, getCollection } from 'astro:content'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import BlogComments from '@components/blog/BlogComments'
+import BlogTOC from '@components/blog/BlogTOC.astro'
+import CodeCopy from '@components/blog/CodeCopy.astro'
 import Image from '@components/ui/images/Image.astro'
-import { timeago } from '@support/time'
-import { Settings } from '../../config'
 import LightningTip from '@components/blog/LightningTip.astro'
+import { Settings } from '../../config'
 import { SITE } from '@/config'
 
 export async function getStaticPaths() {
@@ -19,7 +20,8 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<'posts'>
 
 const post = Astro.props
-const { Content, remarkPluginFrontmatter } = await post.render()
+const { Content, remarkPluginFrontmatter, headings } = await post.render()
+const showTOC = post.data.toc ?? headings.filter(heading => heading.depth === 2).length >= 3
 
 const categories: CollectionEntry<'categories'>[] = (await getCollection('categories')).filter(
     c => post.data.category.includes(c.slug),
@@ -71,7 +73,7 @@ const ogImage = post.data.ogImage
                     <h2 class="block text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-300 md:text-4xl lg:text-5xl">
                         {post.data.title}
                     </h2>
-                    <ol class="flex items-center whitespace-nowrap mt-2">
+                    <ol class="flex flex-wrap items-center gap-y-2 whitespace-nowrap mt-2">
                         {categories.map(category => (
                             <li class="inline-flex items-center">
                                 <a
@@ -102,7 +104,9 @@ const ogImage = post.data.ogImage
                     </ol>
                 </div>
 
-                <article class="prose prose-blog sm:prose-lg dark:prose-invert max-w-none">
+                {showTOC && <BlogTOC headings={headings} />}
+
+                <article data-post-content class="prose prose-blog sm:prose-lg dark:prose-invert max-w-none">
                     <Content />
                 </article>
 
@@ -128,6 +132,7 @@ const ogImage = post.data.ogImage
             )
         }
     </section>
+    <CodeCopy />
     <style is:inline>
         html.dark .astro-code,
         html.dark .astro-code span {

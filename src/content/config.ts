@@ -21,6 +21,9 @@ const posts = defineCollection({
 
         tags: z.array(z.string()).optional(),
 
+        // By default, show navigation for posts with at least three H2 sections.
+        toc: z.boolean().optional(),
+
         // not use, just record this value since its from my previous blog system
         updatedDate: z.coerce.date().optional(),
         oldViewCount: z.number().optional(),

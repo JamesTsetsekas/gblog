@@ -12,9 +12,9 @@ selected: true
 
 *e/acc, techno-optimism, and the case against governing through fear.*
 
-On September 26, people gathered at PubKey in Washington, DC, for [Data After Dark](https://www.joinyv.org/event/data-after-dark-a-pro-data-center-party), a party celebrating data centers and technological progress. According to [reporting from the event](https://dailycaller.com/2026/09/28/data-after-dark-party-centers-washington-dc-protestors-jonas-du-casey-given-amy-kremer/), protesters interrupted the remarks, attendees chanted “USA,” and security removed the protesters.
+I came across [Data After Dark](https://www.joinyv.org/event/data-after-dark-a-pro-data-center-party), a pro-data-center party at PubKey in Washington, DC, on Twitter. The September 26 event was billed as a gathering for techno-optimists to celebrate American innovation.
 
-The [Fox News story](https://www.foxnews.com/politics/protester-storms-pro-data-center-bash-flips-off-crowd-usa-chants-erupt-amid-trumps-ai-push) brought the scene to my attention. What interested me was the reason people had gathered in the first place: they were enthusiastic about building the physical infrastructure of the future. Servers, electricity, computing capacity. Things that make other things possible.
+What interested me was the reason people had gathered in the first place: they were enthusiastic about building the physical infrastructure of the future. Servers, electricity, computing capacity. Things that make other things possible.
 
 I share that enthusiasm. I am pro-technology. I want more capable tools, more abundant energy, more scientific discovery, and more people able to build something useful. I reject the habit of treating technological ambition as a moral failing and the worst imaginable outcome as the default forecast.
 

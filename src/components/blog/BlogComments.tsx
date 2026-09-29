@@ -13,7 +13,7 @@ function getCurrentTheme(): string {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default'
 }
 
-function convertThemToGiscusThem(them: any): string {
+function convertThemToGiscusThem(them: string | undefined): string {
     if (!them) {
         return commentSetting.lightThem
     }
@@ -23,13 +23,12 @@ function convertThemToGiscusThem(them: any): string {
 
 function BlogComments() {
     const [mounted, setMounted] = React.useState(false)
-    const [theme, setTheme] = React.useState(convertThemToGiscusThem(getCurrentTheme()))
-
-    const handleThemeChange = (event: any) => {
-        setTheme(convertThemToGiscusThem(event?.detail))
-    }
+    const [theme, setTheme] = React.useState(commentSetting.lightThem)
 
     React.useEffect(() => {
+        const handleThemeChange = (event: Event) => {
+            setTheme(convertThemToGiscusThem((event as CustomEvent<string>).detail))
+        }
         const theme = convertThemToGiscusThem(getCurrentTheme())
         setTheme(theme)
 
@@ -45,7 +44,9 @@ function BlogComments() {
     }, [])
 
     return (
-        <div id={id} className="w-full">
+        <section aria-labelledby="discussion-heading" className="w-full">
+            <h2 id="discussion-heading" className="mb-2 text-2xl font-bold text-neutral-800 dark:text-neutral-300">Discussion</h2>
+            <p className="mb-5 text-sm text-neutral-600 dark:text-neutral-400">Share a thought or question. Sign in with GitHub to comment or react.</p>
             {mounted
                 ? (
                         <Giscus
@@ -54,17 +55,18 @@ function BlogComments() {
                             repoId={commentSetting.repoId}
                             category={commentSetting.category}
                             categoryId={commentSetting.categoryId}
-                            mapping="title"
+                            mapping="pathname"
+                            strict="1"
                             reactionsEnabled="1"
                             emitMetadata="0"
                             inputPosition="top"
-                            lang="zh-CN"
+                            lang="en"
                             loading="lazy"
                             theme={theme}
                         />
                     )
                 : null}
-        </div>
+        </section>
     )
 }
 

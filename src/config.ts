@@ -52,17 +52,17 @@ export const Settings = {
     },
 
     Comment: {
-        // Please note that the environment value here is `string` type on Cloudflare Pages
-        // If you want to disable the comment system, please delete the `COMMENT_ENABLE` environment variable not just set it to `false`.
-        enable: !!(import.meta.env.COMMENT_ENABLE) || !!process.env.COMMENT_ENABLE,
+        // Enable after installing https://github.com/apps/giscus for this repository.
+        // An explicit COMMENT_ENABLE=false disables comments in any build context.
+        enable: (import.meta.env.COMMENT_ENABLE ?? process.env.COMMENT_ENABLE ?? 'false') === 'true',
 
         // please visit https://giscus.app/ to learn how to configure it.
         // You can also check out this article: https://liruifengv.com/posts/add-comments-to-astro/.
         giscus: {
             repo: 'JamesTsetsekas/gblog',
-            repoId: 'MDEwOlJlcG9zaXRvcnkxMjcyODI0NzA',
+            repoId: 'R_kgDONlh-CA',
             category: 'Announcements',
-            categoryId: 'DIC_kwDOB5YtJs4CfZnX',
+            categoryId: 'DIC_kwDONlh-CM4DGoOs',
             darkThem: 'noborder_gray',
             lightThem: 'light',
         },
