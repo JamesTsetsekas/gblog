@@ -13,11 +13,11 @@ oldKeywords: ["James Tsetsekas", "Web and Digital Experience Developer", "Produc
 
 👋 Hi, I’m James Tsetsekas.
 
-I’m a **Web & Digital Experience Developer at Great Plains Communications** and a **Product Engineer at [Conduit](https://conduit.market/)**. I build digital products at the intersection of software, commerce, infrastructure, and open protocols.
+I’m a **Web & Digital Experience Developer at [RightFiber](https://www.rightfiber.com/)** and a **Product Engineer at [Conduit](https://conduit.market/)**. I build digital products at the intersection of software, commerce, infrastructure, and open protocols.
 
 ## What I work on
 
-At Great Plains Communications, I work on public-facing web experiences and the systems behind them: performance, accessibility, content platforms, integrations, analytics, and the operational details that make a site dependable.
+At RightFiber, I work on public-facing web experiences and the systems behind them: performance, accessibility, content platforms, integrations, analytics, and the operational details that make a site dependable.
 
 At Conduit, I help build decentralized commerce on Nostr and Bitcoin Lightning. That work spans product engineering, event-driven application architecture, signer integrations, encrypted order flows, payments, and the less glamorous reliability work needed to turn an open protocol into a product people can use.
 
