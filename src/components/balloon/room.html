@@ -1,0 +1,300 @@
+<noscript
+    >This interactive diagram needs JavaScript. The article below includes the
+    complete baseline calculation.</noscript
+>
+
+<section class="studio" aria-label="Interactive room model">
+    <div class="toolbar">
+        <div class="group" role="group" aria-label="Camera view">
+            <button id="iso" class="active" aria-pressed="true">
+                Isometric</button
+            ><button id="top" aria-pressed="false">Floor plan</button>
+        </div>
+        <div class="group">
+            <button id="pause">Pause</button><button id="replay">Replay</button
+            ><button id="full">Fill room</button>
+        </div>
+    </div>
+    <div class="scene">
+        <canvas
+            id="scene"
+            tabindex="0"
+            role="group"
+            aria-roledescription="interactive 3D room"
+            aria-label="Illustrative 3D cutaway of the room and red balloons. Drag to orbit; arrow keys rotate; Home resets view. Numeric controls follow."
+        ></canvas>
+        <div class="scene-caption">
+            <strong id="scopeCaption">LIVING ROOM + DOUBLE-HEIGHT VOID</strong
+            ><span>Illustrative cutaway · furniture placement approximate</span>
+        </div>
+        <div class="key">
+            <span>DRAG TO ORBIT · ← ↑ ↓ → · HOME TO RESET</span
+            ><span id="sample">Rendering sample</span>
+        </div>
+    </div>
+    <div class="fillbar">
+        <label for="fill">Fill <output id="fillValue">100%</output></label
+        ><input
+            id="fill"
+            type="range"
+            min="0"
+            max="100"
+            step="any"
+            value="100"
+        /><button id="empty">Empty</button>
+    </div>
+    <div class="readout" >
+        <div>
+            <div class="meta">ESTIMATED CAPACITY</div>
+            <div class="big" id="capacity">≈ 5,350 <small>balloons</small></div>
+            <div class="live" id="current" aria-live="off">Filling…</div>
+        </div>
+        <div class="volume">
+            <span class="meta">AVAILABLE AIR SPACE</span
+            ><strong id="available">4,376.3 ft³</strong
+            ><span class="meta" id="sphere"
+                >12 in diameter · 0.524 ft³ each</span
+            >
+        </div>
+    </div>
+</section>
+<div class="legend">
+    <span><b></b>Air-filled balloons</span
+    ><span><b class="bound"></b>Artificial scope boundary</span
+    ><span><b class="void"></b>Double-height void included</span>
+</div>
+<p class="note">
+    Air-filled balloons settle downward; they do not rise like helium. This is
+    an illustrative packing animation, not collision-accurate physics. Red is a
+    visual choice and does not affect the estimate.
+</p>
+<details class="inputs">
+    <summary>Adjust the assumptions</summary>
+    <section class="settings" aria-label="Estimation inputs">
+        <div class="panel">
+            <h3>The space</h3>
+            <div class="field wide">
+                <label for="preset">Room preset</label
+                ><select id="preset">
+                    <option value="baseline">
+                        Article baseline · reset inputs
+                    </option>
+                    <option value="custom">
+                        Custom room · your assumptions
+                    </option>
+                </select>
+            </div>
+            <div class="field wide">
+                <label for="scope">Room boundary</label
+                ><select id="scope">
+                    <option value="whole">
+                        Whole living room + double-height void
+                    </option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="width"
+                    >Room width · ft
+                    <small id="widthSource"
+                        >Approximate floor plan</small
+                    ></label
+                ><input
+                    id="width"
+                    type="number"
+                    min="4"
+                    max="60"
+                    step="0.1"
+                    value="16"
+                />
+            </div>
+            <div class="field">
+                <label for="length"
+                    >Room length · ft
+                    <small id="lengthSource"
+                        >23 ft 1 in supplied (= 23.083333…)</small
+                    ></label
+                ><input
+                    id="length"
+                    type="number"
+                    min="4"
+                    max="80"
+                    step="any"
+                    value="23.083333333333332"
+                />
+            </div>
+            <div class="field">
+                <label for="low"
+                    >Lower ceiling · ft
+                    <small id="lowSource"
+                        >111 in measured = 9.25 ft</small
+                    ></label
+                ><input
+                    id="low"
+                    type="number"
+                    min="4"
+                    max="30"
+                    step="0.25"
+                    value="9.25"
+                />
+            </div>
+            <label class="check"
+                ><input id="split" type="checkbox" checked />Include split /
+                double-height ceiling</label
+            >
+            <div class="field">
+                <label for="high"
+                    >Tall ceiling · ft
+                    <small class="badge">ESTIMATE · NOT MEASURED</small></label
+                ><input
+                    id="high"
+                    type="number"
+                    min="4"
+                    max="50"
+                    step="0.25"
+                    value="18.5"
+                />
+            </div>
+            <div class="field">
+                <label for="tallArea"
+                    >Tall footprint · ft²
+                    <small class="badge">ESTIMATE · NOT MEASURED</small></label
+                ><input
+                    id="tallArea"
+                    type="number"
+                    min="0"
+                    max="4800"
+                    step="1"
+                    value="120"
+                />
+            </div>
+            <div id="deskFields" hidden>
+                <div class="field">
+                    <label for="deskW"
+                        >Desk-zone width · ft
+                        <small>Assumed and editable</small></label
+                    ><input
+                        id="deskW"
+                        type="number"
+                        min="2"
+                        max="60"
+                        step="0.5"
+                        value="8"
+                    />
+                </div>
+                <div class="field">
+                    <label for="deskL"
+                        >Desk-zone depth · ft
+                        <small>Rear lower-ceiling zone</small></label
+                    ><input
+                        id="deskL"
+                        type="number"
+                        min="2"
+                        max="80"
+                        step="0.5"
+                        value="6"
+                    />
+                </div>
+            </div>
+        </div>
+        <div class="panel">
+            <h3>The balloons</h3>
+            <div class="field">
+                <label for="diameter"
+                    >Inflated diameter · in
+                    <small>Sphere approximation</small></label
+                ><input
+                    id="diameter"
+                    type="number"
+                    min="4"
+                    max="36"
+                    step="0.5"
+                    value="12"
+                />
+            </div>
+            <div class="field">
+                <label for="packing"
+                    >Packing factor
+                    <small
+                        >Rigid sphere analogy · ordered equal spheres ≈
+                        0.74</small
+                    ></label
+                ><input
+                    id="packing"
+                    type="number"
+                    min="0.1"
+                    max="0.74"
+                    step="0.01"
+                    value="0.64"
+                />
+            </div>
+            <div class="field">
+                <label for="furniture"
+                    >Furniture displacement · ft³
+                    <small id="furnitureSource"
+                        >ESTIMATE · material / blocked volume</small
+                    ></label
+                ><input
+                    id="furniture"
+                    type="number"
+                    min="0"
+                    max="10000"
+                    step="5"
+                    value="150"
+                />
+            </div>
+            <div class="field">
+                <label for="count"
+                    >Balloon count to illustrate
+                    <small>Clamped to this model’s capacity</small></label
+                ><input
+                    id="count"
+                    type="number"
+                    min="0"
+                    step="1"
+                    value="5349"
+                />
+            </div>
+            <p class="foot">
+                Subtract solid furniture, closed cavities and inaccessible gaps.
+                Space under open tables can remain usable. Drawn furniture is
+                schematic; it does not measure this allowance.
+            </p>
+            <details>
+                <summary>How uncertain is this?</summary>
+                <p>
+                    The tall footprint is an assumption, not a measurement. Try
+                    160 ft² instead of 120 ft² and compare. Diameter changes act
+                    cubically; packing changes act linearly.
+                </p>
+                <div class="sensitivity">
+                    <span>Diameter −10%<strong id="smaller"></strong></span
+                    ><span>Diameter +10%<strong id="larger"></strong></span>
+                </div>
+                <p>
+                    These are sensitivity scenarios, not a confidence interval.
+                    Flexible balloons, size variation, gaps and accessible
+                    furniture voids make real packing different from rigid
+                    spheres.
+                </p>
+            </details>
+        </div>
+    </section>
+</details>
+<details>
+    <summary>Show the working</summary>
+    <div class="math" id="math"></div>
+    <p id="provenance"></p>
+</details>
+<details>
+    <summary>What is inside the boundary?</summary>
+    <p>
+        The whole-room model includes the living-room floor area and the
+        double-height void. It excludes upstairs rooms, stairs and kitchen. Open
+        connections at the stairs, upstairs and kitchen are artificially capped:
+        a real pile would spill through unblocked openings.
+    </p>
+    <p>
+        Air-filled balloons settle on the floor and then pile up. No buoyancy,
+        pressure, deformation, airflow or physical containment is simulated.
+    </p>
+</details>

@@ -1,0 +1,468 @@
+.balloon-lab {
+    --ink: var(--foreground, #292c2a);
+    --quiet: var(--muted-foreground, #666c66);
+    --paper: var(--card, #fffdf7);
+    --line: var(--border, #d8d9cf);
+    --red: #c73529;
+    --green: #356659;
+}
+.balloon-lab * {
+    box-sizing: border-box;
+}
+.balloon-lab {
+    margin: 0;
+    background: transparent;
+    color: var(--ink);
+    font:
+        14px/1.5 var(--font-sans, "Segoe UI"),
+        system-ui,
+        sans-serif;
+}
+.balloon-lab button,
+.balloon-lab select {
+    cursor: pointer;
+}
+.balloon-lab button {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 8px 12px;
+}
+.balloon-lab button:hover {
+    border-color: var(--red);
+}
+.balloon-lab button.active,
+.balloon-lab button.primary {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+}
+.balloon-lab main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 24px 0;
+}
+.balloon-lab header {
+    margin-bottom: 19px;
+}
+.balloon-lab .eyebrow {
+    font:
+        600 11px/1.5 ui-monospace,
+        monospace;
+    letter-spacing: 0.13em;
+    color: var(--red);
+    text-transform: uppercase;
+}
+.balloon-lab h1 {
+    font-size: clamp(28px, 5.6vw, 47px);
+    letter-spacing: -0.055em;
+    line-height: 1.08;
+    margin: 7px 0 10px;
+    font-weight: 700;
+}
+.balloon-lab header p {
+    color: var(--quiet);
+    margin: 0;
+    max-width: 620px;
+}
+.balloon-lab .studio {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--paper);
+}
+.balloon-lab .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px solid var(--line);
+}
+.balloon-lab .group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.balloon-lab .toolbar button {
+    padding: 6px 10px;
+    font-size: 12px;
+}
+.balloon-lab .scene {
+    position: relative;
+    background: #eeeade;
+}
+.balloon-lab canvas {
+    width: 100%;
+    height: 440px;
+    display: block;
+    touch-action: pan-y;
+    cursor: grab;
+}
+.balloon-lab canvas:active {
+    cursor: grabbing;
+}
+.balloon-lab .scene-caption {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    pointer-events: none;
+    color: #3d5347;
+    font:
+        11px ui-monospace,
+        monospace;
+    max-width: 260px;
+}
+.balloon-lab .scene-caption strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+.balloon-lab .key {
+    position: absolute;
+    bottom: 12px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    color: #4d594f;
+    font-size: 10px;
+    pointer-events: none;
+}
+.balloon-lab .key span:first-child {
+    background: #f8f5e9dd;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+.balloon-lab .fillbar {
+    padding: 13px 16px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+}
+.balloon-lab .fillbar input {
+    width: 100%;
+    accent-color: var(--red);
+}
+.balloon-lab .fillbar label {
+    font-size: 12px;
+    font-weight: 600;
+}
+.balloon-lab .readout {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    padding: 18px 20px;
+    gap: 24px;
+    border-top: 1px solid var(--line);
+}
+.balloon-lab .big {
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+}
+.balloon-lab .big small {
+    font-size: 14px;
+    letter-spacing: 0;
+    font-weight: 400;
+}
+.balloon-lab .meta {
+    font-size: 12px;
+    color: var(--quiet);
+}
+.balloon-lab .live {
+    font:
+        12px ui-monospace,
+        monospace;
+    color: var(--red);
+    margin-top: 6px;
+}
+.balloon-lab .volume {
+    border-left: 1px solid var(--line);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.balloon-lab .volume strong {
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+}
+.balloon-lab .note {
+    margin: 12px 0 20px;
+    color: var(--quiet);
+    font-size: 12px;
+}
+.balloon-lab .settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+}
+.balloon-lab h3 {
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    margin: 0 0 12px;
+}
+.balloon-lab .panel {
+    min-width: 0;
+}
+.balloon-lab .field {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    gap: 10px;
+    align-items: center;
+    margin: 9px 0;
+}
+.balloon-lab .field label {
+    font-size: 12px;
+}
+.balloon-lab .field label small {
+    display: block;
+    color: var(--quiet);
+    font-size: 10px;
+}
+.balloon-lab .field input,
+.balloon-lab .field select {
+    width: 100%;
+    min-width: 0;
+    padding: 6px 7px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: var(--paper);
+}
+.balloon-lab .field.wide {
+    grid-template-columns: 1fr;
+}
+.balloon-lab .badge {
+    font-size: 9px;
+    color: var(--red);
+    letter-spacing: 0.04em;
+}
+.balloon-lab .check {
+    font-size: 12px;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    margin-bottom: 9px;
+}
+.balloon-lab .check input {
+    accent-color: var(--green);
+}
+.balloon-lab details {
+    border-top: 1px solid var(--line);
+    padding: 14px 0;
+}
+.balloon-lab summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+}
+.balloon-lab details p,
+.balloon-lab details li {
+    font-size: 12px;
+    color: var(--quiet);
+}
+.balloon-lab .math {
+    font:
+        12px/1.9 ui-monospace,
+        monospace;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    padding: 13px;
+    margin: 10px 0;
+    overflow-wrap: anywhere;
+}
+.balloon-lab .sensitivity {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 10px 0;
+}
+.balloon-lab .sensitivity span {
+    padding: 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-size: 12px;
+}
+.balloon-lab .sensitivity strong {
+    display: block;
+    font-size: 19px;
+}
+.balloon-lab footer {
+    margin-top: 22px;
+    color: var(--quiet);
+    font-size: 11px;
+}
+.balloon-lab .legend {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    font-size: 11px;
+}
+.balloon-lab .legend b {
+    display: inline-block;
+    width: 13px;
+    height: 8px;
+    margin-right: 5px;
+    background: #c73529;
+}
+.balloon-lab .legend b.bound {
+    background: none;
+    border-top: 2px dashed #438575;
+}
+.balloon-lab .legend b.void {
+    background: #a8bfc1;
+}
+.balloon-lab .foot {
+    font-size: 11px;
+    color: var(--quiet);
+}
+@media (min-width: 900px) {
+    .balloon-lab canvas {
+        height: 510px;
+    }
+    .balloon-lab .settings {
+        gap: 48px;
+    }
+}
+@media (max-width: 520px) {
+    .balloon-lab main {
+        padding: 18px 0;
+    }
+    .balloon-lab canvas {
+        height: 370px;
+    }
+    .balloon-lab .settings {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .balloon-lab .readout {
+        gap: 12px;
+        padding: 16px;
+    }
+    .balloon-lab .big {
+        font-size: 35px;
+    }
+    .balloon-lab .volume {
+        padding-left: 12px;
+    }
+    .balloon-lab .volume strong {
+        font-size: 20px;
+    }
+    .balloon-lab .toolbar {
+        padding: 9px;
+    }
+    .balloon-lab .key {
+        font-size: 9px;
+    }
+    .balloon-lab .scene-caption {
+        font-size: 10px;
+        max-width: 210px;
+    }
+    .balloon-lab .fillbar {
+        grid-template-columns: auto 1fr auto;
+        gap: 8px;
+    }
+    .balloon-lab .sensitivity {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 520px) {
+    .balloon-lab .scene-caption {
+        position: relative;
+        left: 0;
+        top: 0;
+        padding: 12px 14px;
+        max-width: none;
+    }
+    .balloon-lab .key {
+        position: relative;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+    }
+    .balloon-lab .scene {
+        display: flex;
+        flex-direction: column;
+    }
+    .balloon-lab .scene-caption {
+        order: -1;
+    }
+}
+
+.balloon-lab {
+    --ink: #404040;
+    --quiet: #525252;
+    --paper: #fafafa;
+    --line: #d4d4d4;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 2rem 0;
+    color: var(--ink);
+}
+.dark .balloon-lab {
+    --ink: #e5e5e5;
+    --quiet: #bfbfbf;
+    --paper: #262626;
+    --line: #525252;
+    --red: #f87171;
+    color-scheme: dark;
+}
+.balloon-lab h3 {
+    color: var(--ink);
+}
+.balloon-lab .scene {
+    background: #eeeade;
+    color-scheme: light;
+}
+.balloon-lab canvas {
+    height: 390px;
+}
+.balloon-lab .inputs {
+    margin-top: 1rem;
+}
+.balloon-lab .group {
+    flex-wrap: wrap;
+}
+.balloon-lab [hidden] {
+    display: none !important;
+}
+.balloon-lab summary {
+    min-height: 32px;
+}
+@media (max-width: 520px) {
+    .balloon-lab canvas {
+        height: 300px;
+    }
+    .balloon-lab .settings {
+        grid-template-columns: 1fr;
+    }
+    .balloon-lab .field {
+        grid-template-columns: minmax(0, 1fr) 95px;
+    }
+}
+
+.balloon-lab button,
+.balloon-lab input,
+.balloon-lab select {
+    font: inherit;
+    color: inherit;
+}
+.balloon-lab :is(button, input, select, canvas, summary):focus-visible {
+    outline: 3px solid #ea580c;
+    outline-offset: 3px;
+}
+
+.balloon-lab{scroll-margin-top:110px}
+.balloon-lab .fillbar label{display:flex;gap:4px}
