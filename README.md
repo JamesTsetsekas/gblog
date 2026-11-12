@@ -65,3 +65,14 @@ The original theme and much of the site foundation came from [godruoyi/gblog](ht
 ## License
 
 Released under the [MIT License](LICENSE).
+
+The balloon estimate in `src/content/posts/how-many-red-balloons.mdx` embeds the
+native `src/components/balloon/BalloonRoom.astro` component. Its static markup and
+prefixed widget CSS live alongside it; the dependency-free canvas controller is
+`src/components/balloon/controller.js`. Controls expand in the article, without an iframe.
+After building, run `node scripts/validate-balloon.cjs` to check the built page,
+assets, baseline math, controls and responsive themes. This uses an existing
+Playwright installation (or `PLAYWRIGHT_MODULE`); it serves built files through
+request interception and needs no server. Set `BALLOON_SCREENSHOTS` to an existing
+directory outside the repository to save review screenshots. Remove `S3_ENABLE`
+from the build environment for local validation; the string `false` enables it.

@@ -1,0 +1,100 @@
+---
+title: "How Many Red Balloons Fit in My Living Room?"
+description: "A thought experiment from work, the arithmetic behind an answer of roughly 5,000, and an interactive model for testing the assumptions."
+pubDate: "2026-11-12 12:00:00"
+category: ["technology", "ai", "life"]
+banner: "@images/banners/red-balloons-living-room.png"
+ogImage: "@images/banners/red-balloons-living-room.png"
+tags: ["Fermi Estimation", "Estimation", "Problem Solving", "Interactive", "AI"]
+selected: true
+---
+
+import BalloonRoom from '../../components/balloon/BalloonRoom.astro'
+
+My manager recently asked our team a question: how many red balloons would it take to fill the room you are sitting in?
+
+You have to decide what "the room" means, pick a balloon, and commit to a defensible number. I work from my living room, so that became the room.
+
+My answer is roughly 5,000. Here is how I got there, and which parts of it I would trust.
+
+## Decide what counts
+
+My living room has a section where the ceiling opens up to the second story. I counted the living room rectangle plus the open air above that tall section. I left out the kitchen, the stairs, and the upstairs rooms.
+
+That boundary is artificial. A real pile of balloons could spill into adjoining spaces through unblocked openings, so the estimate assumes something holds them inside the space I drew.
+
+I also assumed ordinary air-filled balloons. They are slightly heavier than the air they displace, so they settle on the floor and pile upward.
+
+## The inputs
+
+| Input | Value | Where it comes from |
+|---|---|---|
+| Floor | 16 ft × 23 ft 1 in | Approximate floor plan |
+| Lower ceiling | 111 in (9.25 ft) | Measured |
+| Tall ceiling | 18.5 ft | Assumed |
+| Floor area under the tall ceiling | 120 sq ft | Assumed |
+| Furniture and unreachable space | 150 cu ft | Assumed |
+| Balloon | 12 in sphere | Assumed |
+| Packing fraction | 0.64 | Assumed |
+
+Only one of these is an actual measurement.
+
+## The arithmetic
+
+```text
+Floor area    = 16 × (23 + 1/12)        = 369.33 sq ft
+Lower volume  = 369.33 × 9.25           = 3,416.33 cu ft
+Tall section  = 120 × (18.5 − 9.25)     = 1,110.00 cu ft
+Gross volume                            = 4,526.33 cu ft
+Available     = 4,526.33 − 150          = 4,376.33 cu ft
+
+One balloon   = π × d³ / 6, with d = 1  = 0.5236 cu ft
+
+Balloons      = 0.64 × 4,376.33 / 0.5236 ≈ 5,349
+```
+
+Two details are easy to get wrong. The tall section only adds the height *above* the lower ceiling, because the space below it is already in the lower volume. And 23 ft 1 in is 23.083 ft, since an inch is a twelfth of a foot.
+
+## Why 0.64
+
+Spheres leave gaps. The packing fraction is the share of the space the balloons themselves occupy, so you multiply the room volume by it before dividing by the volume of one balloon. Dividing by it instead gives about 13,000, which says gaps help you fit more balloons.
+
+Research puts the packing fraction near 0.64 for [random close packing of equal hard spheres](https://journals.aps.org/pre/abstract/10.1103/PhysRevE.77.031101). Balloons are soft, slightly pear-shaped, and have necks, so I am borrowing a rigid-sphere number as an analogy: imagine 64 of every 100 cubic feet occupied by balloon bodies, with the other 36 left as gaps. Squashing could pack them tighter. Friction and odd shapes could leave bigger holes. I have no measurement that says which effect wins in a furnished room.
+
+## What moves the answer
+
+The count depends on the cube of the balloon's diameter, so even a small change in inflation makes a visible difference:
+
+| Change from the baseline | Balloons |
+|---|---|
+| Baseline | about 5,350 |
+| 11 in balloons | about 6,945 |
+| 13 in balloons | about 4,207 |
+| No tall section | about 3,992 |
+| Another 100 cu ft of furniture | about 122 fewer |
+
+One inch of balloon diameter swings the result by well over a thousand, and a "12 inch" balloon is rarely inflated to exactly 12 inches. An extra 100 cubic feet of furniture changes this baseline much less than either diameter scenario.
+
+These are what-if scenarios. They are not a confidence interval, and I do not have the measurements to produce one. That is why I say "about 5,350" when I am walking through the math and "roughly 5,000" out loud. The formula prints 5,349, and the inputs cannot support four digits.
+
+## Try it yourself
+
+I built a small interactive model of the estimate. Every assumption is a control, and the count updates as you move it.
+
+<BalloonRoom />
+
+The formula supplies the count. The staged fill illustrates it with a sample of balloons; it is not a physics simulation.
+
+## How I built it
+
+I used AI tools to explore the problem, build the model, check the arithmetic, and challenge the assumptions and wording. That assistance shaped the exercise, not just the code. I chose the boundary and inputs; the unmeasured parts remain unmeasured.
+
+## What I would measure next
+
+If I wanted a better number, I would do three things, in this order:
+
+1. Inflate a few balloons and measure them, to check their actual size and variation.
+2. Measure the tall ceiling and its footprint with a laser.
+3. Fill a large box with balloons and count them, to replace 0.64 with something observed.
+
+I like this kind of question because the number is the least interesting part. Someone who answers "5,000" and someone who answers "8,000" can both be reasoning well. What you learn from the answer is which assumptions the person noticed they were making.
