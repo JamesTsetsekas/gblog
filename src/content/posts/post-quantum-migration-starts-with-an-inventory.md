@@ -2,8 +2,10 @@
 title: "Post-Quantum Migration Starts With an Inventory"
 description: "NIST's post-quantum standards are final and its transition timeline is set. Before swapping algorithms, application teams need to know where cryptography lives, what it protects, for how long, and who can change it."
 pubDate: "2026-11-19 00:00:00"
-category: ["security", "technology"]
-banner: "@images/banners/ZUZkJL1ik3SrCe2b1rf8obtmXlNnpEi7loouJ6mv.jpeg"
+category: ["cryptography", "security", "software-engineering"]
+banner: "@images/banners/article-series/post-quantum-migration-starts-with-an-inventory.webp"
+bannerAlt: "Keys, a cable, a key module, and a lattice tile arranged beside an inventory sheet."
+ogImage: "@images/banners/article-series/post-quantum-migration-starts-with-an-inventory-social.png"
 tags: ["Post-Quantum Cryptography", "ML-KEM", "ML-DSA", "Cryptographic Inventory", "NIST", "Migration"]
 selected: false
 ---

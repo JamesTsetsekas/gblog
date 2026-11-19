@@ -2,8 +2,10 @@
 title: "A Timeout Does Not Mean a Payment Failed"
 description: "When a payment request times out, the outcome is unknown, not failed. Idempotency keys, payload binding, durable state and reconciliation, shown with a simulated processor you can run and break."
 pubDate: "2026-11-19 00:00:00"
-category: ["technology", "security", "tools"]
-banner: "@images/banners/lnbits-tls-expired.png"
+category: ["software-engineering", "security"]
+banner: "@images/banners/article-series/timeout-does-not-mean-payment-failed.webp"
+bannerAlt: "A single orange token reaches its tray while an acknowledgement channel stops at a frosted partition."
+ogImage: "@images/banners/article-series/timeout-does-not-mean-payment-failed-social.png"
 tags: ["Payments", "Idempotency", "Reliability", "Reconciliation", "API Design"]
 selected: false
 ---

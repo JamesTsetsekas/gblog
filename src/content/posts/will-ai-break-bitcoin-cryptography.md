@@ -2,7 +2,7 @@
 title: "Will AI Break Bitcoin's Cryptography? How to Read the Claim"
 description: "A claimed AI refutation of the Exponential Time Hypothesis set off 'is Bitcoin safe?' questions. Here is what Bitcoin's security rests on, what the result does and does not touch, and where the real risks sit."
 pubDate: "2026-11-19 00:00:00"
-category: ["bitcoin", "security", "ai"]
+category: ["bitcoin", "cryptography", "security", "ai"]
 banner: "@images/banners/bitcoin-security-stack.png"
 tags: ["Bitcoin", "Cryptography", "Exponential Time Hypothesis", "Schnorr", "ECDSA", "Quantum Computing"]
 selected: false

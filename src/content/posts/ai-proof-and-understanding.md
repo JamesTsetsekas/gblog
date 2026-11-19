@@ -2,8 +2,10 @@
 title: "An AI Produced a Proof. What Counts as Understanding It?"
 description: "The claimed refutation of the Exponential Time Hypothesis arrived with machine-checked Lean proofs. That settles less than it seems: checking a proof, checking its statement and understanding it are three different jobs."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "technology"]
-banner: "@images/banners/UmPvxfPRpqXiBU7Bf6fukza2Fagp5drXNbjR3rMe.jpeg"
+category: ["mathematics", "ai"]
+banner: "@images/banners/article-series/ai-proof-and-understanding.webp"
+bannerAlt: "A translucent bridge model and its drawings linked by an orange joint under a magnifying lens."
+ogImage: "@images/banners/article-series/ai-proof-and-understanding-social.png"
 tags: ["Mathematics", "Lean", "Formal Verification", "Exponential Time Hypothesis", "AI Research"]
 selected: false
 ---

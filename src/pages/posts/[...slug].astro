@@ -61,10 +61,11 @@ const ogImage = post.data.ogImage
                 <Image
                     class="w-full object-cover rounded-tl-sm rounded-tr-sm"
                     src={post.data.banner}
-                    alt={post.data.title}
+                    alt={post.data.bannerAlt ?? post.data.title}
                     draggable="false"
                     format="avif"
-                    loading="lazy"
+                    loading="eager"
+                    fetchpriority="high"
                     inferSize={true}
                 />
             </div>

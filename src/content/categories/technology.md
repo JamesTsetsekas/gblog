@@ -1,4 +1,4 @@
 ---
-title: 'Technology 💻'
-description: 'Technology'
+title: "Technology"
+description: "Systems, open-source technology, and practical experiments."
 ---

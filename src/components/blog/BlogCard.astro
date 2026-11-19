@@ -19,7 +19,7 @@ interface Props {
         <Image
             class="w-full h-full sm:h-[220px] md:h-[240px] start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
             src={blog.data.banner}
-            alt={blog.data.title}
+            alt={blog.data.bannerAlt ?? blog.data.title}
             draggable="false"
             loading="eager"
             format="avif"

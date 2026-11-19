@@ -2,7 +2,7 @@
 title: "What My One-Shot Coding Experiments Can Actually Tell You"
 description: "A guide to reading Oneshot Arcade and Oneshot Visuals, from what the agents could do in one session to what the published artifacts can show."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "technology", "tools"]
+category: ["software-engineering", "ai", "tools"]
 banner: "@images/banners/ai-and-the-gaming-renaissance.png"
 tags: ["AI", "Coding Agents", "Games", "SVG", "Evaluation"]
 selected: false

@@ -18,10 +18,10 @@ const URL = Astro.url.href
 const categoriesURL = `${Astro.url.origin}/categories`
 
 const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
-    (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf() || a.slug.localeCompare(b.slug),
 ).filter((b) => {
     return b.data.category.includes(category.slug)
-});
+})
 ---
 
 <BaseLayout
@@ -46,13 +46,20 @@ const posts: CollectionEntry<'posts'>[] = (await getCollection('posts')).sort(
         title={category.data.title}
         subTitle={category.data.description}
         btnExists={true}
-        btnTitle="Go to List"
-        btnURL="/categories"
+        btnTitle="All topics"
+        btnURL="/categories/"
     />
 
     <section class="mx-auto max-w-[85rem] px-4 py-8 sm:px-6 lg:px-8 mb-10 2xl:max-w-full">
-        <div class="grid gap-6 grid-cols-1 lg:grid-cols-3 sm:grid-cols-2">
+        <p class="mb-6 text-sm text-neutral-600 dark:text-neutral-400">{posts.length} {posts.length === 1 ? 'post' : 'posts'} &middot; Newest first</p>
+        <div class="grid gap-6 grid-cols-1 lg:grid-cols-3 sm:grid-cols-2" data-category-posts>
             {posts.map(b => <BlogCard blog={b} />)}
         </div>
+        {posts.length === 0 && (
+            <div class="rounded-xl bg-neutral-100 p-8 dark:bg-neutral-900/30">
+                <h2 class="text-xl font-semibold text-neutral-800 dark:text-neutral-200">No posts in this topic yet</h2>
+                <p class="mt-3 text-neutral-600 dark:text-neutral-400">Browse the <a class="text-orange-600 underline underline-offset-4 dark:text-orange-300" href="/categories/">active topics</a> for published articles.</p>
+            </div>
+        )}
     </section>
 </BaseLayout>

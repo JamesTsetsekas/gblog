@@ -2,8 +2,10 @@
 title: "The Patch Is Out. Your Users Are Still Vulnerable."
 description: "A released fix does not end anyone's exposure. How to find what you actually run, roll a patch out in rings with a way back, and verify by observation, with a synthetic fleet model you can run."
 pubDate: "2026-11-19 00:00:00"
-category: ["security", "technology", "tools"]
-banner: "@images/banners/lnd-macaroon-rotation.png"
+category: ["software-engineering", "security"]
+banner: "@images/banners/article-series/the-patch-is-out-users-still-vulnerable.webp"
+bannerAlt: "A miniature server fleet with one replacement component installed and another ready for deployment."
+ogImage: "@images/banners/article-series/the-patch-is-out-users-still-vulnerable-social.png"
 tags: ["Patch Management", "Vulnerability Management", "Deployment", "Rollback", "Operations"]
 selected: false
 ---

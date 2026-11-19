@@ -2,9 +2,9 @@
 title: "Bitcoin Treasuries Boom: Why 2025 Will Be the Year of Corporate Adoption"
 description: "MicroStrategy and Metaplanet lead the Bitcoin treasury trend, and with the FASB rule change, 2025 is poised for a surge in corporate adoption as companies seek to hedge inflation and boost value."
 pubDate: "2025-05-09 17:41:00"
-category: ["bitcoin", "finance", "corporate strategy", "cryptocurrency"]
+category: ["bitcoin", "economics"]
 banner: "@images/banners/Bitcoin-Treasuries-Boom.jpg"
-tags: ["Bitcoin Treasuries", "MicroStrategy", "Metaplanet", "Corporate Adoption", "2025 Trends"]
+tags: ["Bitcoin Treasuries", "MicroStrategy", "Metaplanet", "Corporate Adoption", "2025 Trends", "finance", "corporate strategy", "cryptocurrency"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["Bitcoin treasury companies", "MicroStrategy Metaplanet", "corporate Bitcoin adoption 2025"]

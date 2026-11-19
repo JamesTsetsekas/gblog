@@ -2,9 +2,9 @@
 title: "The Pragmatic Programmer: Timeless Lessons for Software Developers in 2025"
 description: "Andy Hunt and Dave Thomas' The Pragmatic Programmer offers enduring wisdom for developers, blending practical tips with a mindset for excellence in software craftsmanship."
 pubDate: "2025-05-10 17:41:00"
-category: ["programming", "software development", "tech books", "career advice", "books"]
+category: ["software-engineering", "books"]
 banner: "@images/banners/the-pragmatic-programmer.jpg"
-tags: ["Pragmatic Programmer", "Andy Hunt", "Dave Thomas", "Software Development", "Coding Best Practices"]
+tags: ["Pragmatic Programmer", "Andy Hunt", "Dave Thomas", "Software Development", "Coding Best Practices", "programming", "tech books", "career advice"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["Pragmatic Programmer book", "Andy Hunt Dave Thomas", "software development tips"]

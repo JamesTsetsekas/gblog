@@ -6,6 +6,7 @@ const posts = defineCollection({
         title: z.string(),
         description: z.string(),
         banner: image().or(z.string()),
+        bannerAlt: z.string().optional(),
 
         // This banner will be shown in blog lists(/posts) if provided.
         banner2: image().or(z.string()).optional(),

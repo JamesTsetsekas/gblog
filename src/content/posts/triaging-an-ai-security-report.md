@@ -2,8 +2,10 @@
 title: "An AI Security Report Lands in Your Inbox. Now What?"
 description: "A long, confident vulnerability report is a hypothesis until someone reproduces it. A triage workflow for AI-assisted reports, exercised on a synthetic example you can run, with recent maintainer evidence from curl."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "security", "technology"]
-banner: "@images/banners/ai-security-review.png"
+category: ["security", "ai", "software-engineering"]
+banner: "@images/banners/article-series/triaging-an-ai-security-report.webp"
+bannerAlt: "Report cards and a magnifying lens beside one orange evidence path through a mechanical assembly."
+ogImage: "@images/banners/article-series/triaging-an-ai-security-report-social.png"
 tags: ["AI Security", "Vulnerability Triage", "Open Source", "Regression Testing", "Disclosure"]
 selected: false
 ---

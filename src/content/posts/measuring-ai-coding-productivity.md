@@ -2,8 +2,10 @@
 title: "How I'd Measure Whether an AI Coding Tool Saves Time"
 description: "What METR's studies measured, why the follow-up became harder to interpret, and how I'd design a small team experiment that counts review and rework."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "technology", "tools"]
-banner: "@images/banners/the-pragmatic-programmer.jpg"
+category: ["software-engineering", "ai", "tools"]
+banner: "@images/banners/article-series/measuring-ai-coding-productivity.webp"
+bannerAlt: "Conceptual workbench with a stopwatch and stages for drafting, inspection, rework, and completion."
+ogImage: "@images/banners/article-series/measuring-ai-coding-productivity-social.png"
 tags: ["AI", "Developer Productivity", "Measurement", "Code Review"]
 selected: false
 ---

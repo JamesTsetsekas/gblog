@@ -2,8 +2,10 @@
 title: "Can AI Make Code Faster Without Making It Wrong?"
 description: "A runnable Python experiment uses an exact reference and three workloads to decide when sorting timestamps is worth the cost."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "technology", "python"]
-banner: "@images/banners/the-pragmatic-programmer.jpg"
+category: ["software-engineering", "ai", "python"]
+banner: "@images/banners/article-series/ai-optimization-without-breaking-correctness.webp"
+bannerAlt: "Two mechanical routes deliver identical rows of spheres beside a shared orange calibration rail."
+ogImage: "@images/banners/article-series/ai-optimization-without-breaking-correctness-social.png"
 tags: ["AI", "Performance", "Benchmarking", "Testing", "Python"]
 selected: false
 ---

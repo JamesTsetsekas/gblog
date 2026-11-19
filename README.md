@@ -39,10 +39,15 @@ description: "A concise summary for previews and search results."
 pubDate: "2026-09-09 12:00:00"
 category: ["bitcoin", "security"]
 banner: "@images/banners/example.png"
+bannerAlt: "A concise description of the illustration"
 tags: ["Bitcoin", "Security"]
 selected: false
 ---
 ```
+
+Every category must have a matching definition; the categories build rejects unknown references. Empty category URLs remain available but are omitted from the topic directory. Use categories for broad topics and tags for narrower subjects.
+
+After building, `node scripts/validate-categories.cjs` checks topic counts, links, empty states, keyboard focus, and responsive light/dark layouts. It uses an existing Playwright installation or `PLAYWRIGHT_MODULE`, without starting a server. Set `CATEGORY_SCREENSHOTS` to an existing directory outside the repository to save review images.
 
 Use a local 16:9 banner when possible, write descriptive alt text for inline images, and attribute external data or diagrams next to the visual. Add a matching file in `src/content/categories/` before assigning a new category.
 
@@ -65,6 +70,8 @@ Install the [Giscus GitHub app](https://github.com/apps/giscus) for this reposit
 ## Credits
 
 The original theme and much of the site foundation came from [godruoyi/gblog](https://github.com/godruoyi/gblog) and [mearashadowfax/ScrewFast](https://github.com/mearashadowfax/ScrewFast). This repository has since been adapted for James’s publication and content workflow.
+
+The [upstream theme review](docs/upstream-theme-review.md) records adopted ideas, fixes already present, and the scope of a future Astro 6 migration.
 
 ## License
 

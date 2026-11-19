@@ -2,8 +2,10 @@
 title: "Passing Tests Is Not a Proof: What AI Verification Means for Developers"
 description: "Google DeepMind's AlphaProof Code established scoped properties of a compiled one-to-one libsignal harness. The lesson for everyday developers is less about AI proofs than about writing specifications worth proving."
 pubDate: "2026-11-19 00:00:00"
-category: ["ai", "security", "technology"]
-banner: "@images/banners/cltrDj0NYYvdGRANg6gPkpafhUZkjLKQVn2Lofld.jpeg"
+category: ["software-engineering", "security", "ai"]
+banner: "@images/banners/article-series/passing-tests-is-not-a-proof.webp"
+bannerAlt: "Three fitted ivory pieces inside a measuring frame, beside sample pieces and an inspection lens."
+ogImage: "@images/banners/article-series/passing-tests-is-not-a-proof-social.png"
 tags: ["Formal Verification", "Testing", "Lean", "Signal", "Specifications", "AI"]
 selected: false
 ---
