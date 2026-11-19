@@ -2,9 +2,9 @@
 title: "The Big Print: Fixing America's Broken Money with Sound Money Solutions"
 description: "Lawrence Lepard's The Big Print exposes the flaws in America's fiat monetary system, tracing its history and advocating Bitcoin and sound money to address inflation and inequality."
 pubDate: "2025-05-05 00:00:00"
-category: ["bitcoin", "economics", "finance", "sound money", "books"]
+category: ["bitcoin", "economics", "books"]
 banner: "@images/banners/the-big-print.png"
-tags: ["Bitcoin", "Sound Money", "Inflation", "Fiat Currency", "Lawrence Lepard"]
+tags: ["Bitcoin", "Sound Money", "Inflation", "Fiat Currency", "Lawrence Lepard", "finance"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["The Big Print", "Lawrence Lepard", "sound money Bitcoin"]

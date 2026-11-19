@@ -2,9 +2,9 @@
 title: "Bitcoin Core's OP_RETURN Limit Removal: A Controversial Step Toward Flexibility"
 description: "Bitcoin Core's decision to remove the OP_RETURN limit in its next release has divided the community, raising questions about network efficiency, spam, and Bitcoin's core mission."
 pubDate: "2025-05-08 00:00:00"
-category: ["bitcoin", "blockchain", "technology", "cryptocurrency"]
+category: ["bitcoin", "technology"]
 banner: "@images/banners/op_return-limit-removal.jpg"
-tags: ["Bitcoin Core", "OP_RETURN", "Blockchain Data", "Network Policy", "Bitcoin Debate"]
+tags: ["Bitcoin Core", "OP_RETURN", "Blockchain Data", "Network Policy", "Bitcoin Debate", "blockchain", "cryptocurrency"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["Bitcoin Core OP_RETURN", "limit removal debate", "blockchain spam concerns"]

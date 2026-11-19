@@ -2,9 +2,9 @@
 title: "Immich: Your Self-Hosted Google Photos Alternative for Private Photo and Video Management"
 description: "Discover Immich, a high-performance, open-source, self-hosted photo and video management solution that rivals Google Photos while prioritizing privacy and control."
 pubDate: "2025-05-02 00:00:00"
-category: ["technology", "self-hosted", "privacy", "photo-management"]
+category: ["technology", "linux"]
 banner: "@images/banners/immich.png"
-tags: ["Immich", "Google Photos", "Self-Hosted", "Privacy", "Photo Management"]
+tags: ["Immich", "Google Photos", "Self-Hosted", "Privacy", "Photo Management", "photo-management"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["Immich photo management", "self-hosted Google Photos", "privacy-focused photo backup"]

@@ -22,7 +22,7 @@ const posts = blogs.slice(0, 5)
                 btnTitle="Read More"
                 btnURL=`/posts/${b.slug}`
                 img={b.data.banner}
-                imgAlt={b.data.title}
+                imgAlt={b.data.bannerAlt ?? b.data.title}
             />
         )
         : (
@@ -33,10 +33,10 @@ const posts = blogs.slice(0, 5)
                 btnTitle="Read More"
                 btnURL=`/posts/${b.slug}`
                 img={b.data.banner}
-                imgAlt={b.data.title}
+                imgAlt={b.data.bannerAlt ?? b.data.title}
                 single={!b.data.banner2}
                 imgOne={b.data.banner}
-                imgOneAlt={b.data.title}
+                imgOneAlt={b.data.bannerAlt ?? b.data.title}
                 imgTwo={b.data?.banner2}
                 imgTwoAlt={b.data.title}
             />

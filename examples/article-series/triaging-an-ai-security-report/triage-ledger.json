@@ -1,0 +1,91 @@
+{
+  "claims": [
+    {
+      "claim": "Directory containment uses startswith, so a sibling directory sharing the name prefix is readable",
+      "decision": "confirmed vulnerability",
+      "fixed_observation": {
+        "disclosed": false,
+        "exception": "PermissionError"
+      },
+      "id": "C1",
+      "reachable_from_declared_entry_points": true,
+      "target_exists_in_vulnerable": true,
+      "target_function": "_safe_path",
+      "vulnerable_observation": {
+        "disclosed": true,
+        "exception": null
+      }
+    },
+    {
+      "claim": "Arbitrary file read anywhere on disk through ../ sequences",
+      "decision": "not reproduced: the existing check blocks it",
+      "fixed_observation": {
+        "disclosed": false,
+        "exception": "PermissionError"
+      },
+      "id": "C2",
+      "reachable_from_declared_entry_points": true,
+      "target_exists_in_vulnerable": true,
+      "target_function": "_safe_path",
+      "vulnerable_observation": {
+        "disclosed": false,
+        "exception": "PermissionError"
+      }
+    },
+    {
+      "claim": "An absolute path discards the base directory",
+      "decision": "not reproduced: the existing check blocks it",
+      "fixed_observation": {
+        "disclosed": false,
+        "exception": "PermissionError"
+      },
+      "id": "C3",
+      "reachable_from_declared_entry_points": true,
+      "target_exists_in_vulnerable": true,
+      "target_function": "_safe_path",
+      "vulnerable_observation": {
+        "disclosed": false,
+        "exception": "PermissionError"
+      }
+    },
+    {
+      "claim": "An embedded null byte truncates the path and bypasses the check",
+      "decision": "duplicate of C1: it reproduces, but the null byte is not the mechanism",
+      "fixed_observation": {
+        "claimed_mechanism_needed": true,
+        "disclosed": false,
+        "exception": "PermissionError"
+      },
+      "id": "C4",
+      "reachable_from_declared_entry_points": true,
+      "target_exists_in_vulnerable": true,
+      "target_function": "_safe_path",
+      "vulnerable_observation": {
+        "claimed_mechanism_needed": false,
+        "disclosed": true,
+        "exception": null
+      }
+    },
+    {
+      "claim": "_legacy_read performs no containment check",
+      "decision": "defect reproduced; no path from declared entry points; security classification needs wider review",
+      "fixed_observation": {
+        "disclosed": false,
+        "exception": "AttributeError"
+      },
+      "id": "C5",
+      "reachable_from_declared_entry_points": false,
+      "target_exists_in_vulnerable": true,
+      "target_function": "_legacy_read",
+      "vulnerable_observation": {
+        "disclosed": true,
+        "exception": null
+      }
+    }
+  ],
+  "report_level": {
+    "reported_severity": "Critical, remote code execution",
+    "supported_impact": "Read of files in sibling directories whose names start with the shared directory's name. No write, no code execution, no read of unrelated directories was demonstrated."
+  },
+  "synthetic": true
+}

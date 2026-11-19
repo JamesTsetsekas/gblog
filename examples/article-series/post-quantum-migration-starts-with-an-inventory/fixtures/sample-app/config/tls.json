@@ -1,0 +1,5 @@
+{
+  "terminatedBy": "managed load balancer",
+  "minVersion": "TLSv1.2",
+  "groups": ["X25519", "P-256"]
+}

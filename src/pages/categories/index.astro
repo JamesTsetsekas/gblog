@@ -1,65 +1,86 @@
 ---
 import { getCollection } from 'astro:content'
-import type { CollectionEntry } from 'astro:content'
 import BaseLayout from '@layouts/BaseLayout.astro'
 import BlogCategory from '@components/blog/BlogCategory.astro'
 import MainSection from '@components/ui/sections/MainSection.astro'
-import { timeago } from '@support/time'
 import { SITE } from '@/config'
 
-const postMap: Map<string, CollectionEntry<'posts'>[]> = (await getCollection('posts')).sort(
-    (a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-).reduce((acc, obj) => {
-    obj.data.category.forEach(cat => {
-        let posts = acc.get(cat)
-        if (!posts) {
-            posts = []
-        }
-        posts.push(obj)
-        acc.set(cat, posts)
-    })
-    return acc
-}, new Map<string, CollectionEntry<'posts'>[]>())
-
+const posts = (await getCollection('posts')).sort((a, b) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf() || a.slug.localeCompare(b.slug),
+)
 const categories = await getCollection('categories')
-const description = 'Here are some categories that James Tsetsekas is interested in, including Technology, Bitcoin, and life.'
+const knownCategories = new Set(categories.map(category => category.slug))
+for (const post of posts) {
+    const unknown = post.data.category.filter(slug => !knownCategories.has(slug))
+    if (unknown.length > 0) {
+        throw new Error(`Unknown categories in ${post.slug}: ${unknown.join(', ')}`)
+    }
+}
+const topics = categories.map(category => ({
+    ...category,
+    posts: posts.filter(post => post.data.category.includes(category.slug)),
+})).filter(category => category.posts.length > 0)
+
+const featuredOrder = ['software-engineering', 'ai', 'security', 'cryptography', 'bitcoin', 'nostr']
+const featured = featuredOrder.flatMap(slug => topics.filter(topic => topic.slug === slug))
+const more = topics.filter(topic => !featuredOrder.includes(topic.slug))
+    .sort((a, b) => b.posts.length - a.posts.length || a.data.title.localeCompare(b.data.title))
+const description = 'Explore software engineering, AI, security, cryptography, Bitcoin and Nostr, with practical examples and sources behind the ideas.'
 const URL = Astro.url.href
 ---
 
 <BaseLayout
-    title="All Categories"
+    title="Categories"
     description={description}
     structuredData={{
         '@context': 'https://schema.org',
-        '@type': 'WebPage',
+        '@type': 'CollectionPage',
         'inLanguage': 'en-US',
         '@id': URL,
         'url': URL,
-        'name': `All Categories - ${SITE.title}`,
+        'name': `Categories - ${SITE.title}`,
         'description': description,
         'isPartOf': {
             '@type': 'WebSite',
             'url': SITE.url,
             'name': SITE.title,
-            'description': SITE.description,
         },
     }}
 >
-    <MainSection title="Categories" subTitle={description} />
+    <MainSection title="Explore by topic" subTitle={description} />
 
-    <section class="mx-auto px-4 py-10 sm:px-6 lg:px-8 lg:pt-10 lg:py-14 2xl:max-w-full">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6 md:gap-10">
-            {
-                categories.map(c => (
-                    <BlogCategory
-                        slug={c.slug}
-                        title={c.data.title}
-                        description={c.data.description}
-                        count={postMap.get(c.slug)?.length ?? 0}
-                        publishDate={timeago(postMap.get(c.slug)?.[0]?.data?.pubDate)}
-                    />
-                ))
-            }
+    <section class="mx-auto px-4 pb-10 pt-8 sm:px-6 lg:px-8" aria-labelledby="core-topics">
+        <div class="mb-5 flex flex-wrap items-baseline justify-between gap-3">
+            <h2 id="core-topics" class="text-lg font-semibold text-neutral-800 dark:text-neutral-200">Engineering &amp; research</h2>
+            <p class="text-sm tabular-nums text-neutral-600 dark:text-neutral-400">{posts.length} posts across {topics.length} topics</p>
+        </div>
+        <div class="grid items-stretch gap-5 md:grid-cols-2 lg:gap-6">
+            {featured.map(topic => (
+                <BlogCategory
+                    slug={topic.slug}
+                    title={topic.data.title}
+                    description={topic.data.description}
+                    count={topic.posts.length}
+                    latest={topic.posts[0]}
+                />
+            ))}
         </div>
     </section>
+
+    {more.length > 0 && (
+        <section class="mx-auto px-4 pb-16 sm:px-6 lg:px-8" aria-labelledby="more-topics">
+            <h2 id="more-topics" class="mb-5 text-lg font-semibold text-neutral-800 dark:text-neutral-200">More to explore</h2>
+            <div class="grid gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+                {more.map(topic => (
+                    <a href={`/categories/${topic.slug}/`} class="group flex items-center justify-between gap-4 border-t border-neutral-300 py-5 outline-none focus-visible:ring-2 focus-visible:ring-orange-500 dark:border-neutral-700" data-category-card={topic.slug}>
+                        <span>
+                            <span class="block text-lg font-medium text-neutral-800 group-hover:text-orange-600 dark:text-neutral-200 dark:group-hover:text-orange-300">{topic.data.title}</span>
+                            <span class="mt-1 block text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">{topic.data.description}</span>
+                        </span>
+                        <span class="shrink-0 text-sm tabular-nums text-neutral-500 dark:text-neutral-400">{topic.posts.length} {topic.posts.length === 1 ? 'post' : 'posts'}</span>
+                    </a>
+                ))}
+            </div>
+        </section>
+    )}
 </BaseLayout>

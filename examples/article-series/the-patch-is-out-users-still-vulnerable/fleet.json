@@ -1,0 +1,92 @@
+{
+  "synthetic": true,
+  "assets": [
+    {
+      "id": "web-1",
+      "kind": "package",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.3",
+      "running_version": "2.4.3",
+      "restart_deferred": true
+    },
+    {
+      "id": "web-2",
+      "kind": "package",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.3",
+      "running_version": "2.4.3",
+      "canary": true
+    },
+    {
+      "id": "web-3",
+      "kind": "package",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.9",
+      "running_version": "2.4.9"
+    },
+    {
+      "id": "web-4",
+      "kind": "package",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.1",
+      "running_version": "2.4.1"
+    },
+    {
+      "id": "api-1",
+      "kind": "container",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.2",
+      "running_version": "2.4.2",
+      "image_pinned_digest": true
+    },
+    {
+      "id": "edge-1",
+      "kind": "package",
+      "internet_facing": true,
+      "feature_enabled": true,
+      "package_version": "2.4.1",
+      "running_version": null,
+      "probe_unreachable": true
+    },
+    {
+      "id": "batch-1",
+      "kind": "vendored",
+      "internet_facing": false,
+      "feature_enabled": true,
+      "package_version": null,
+      "vendored_version": "2.4.0",
+      "running_version": "2.4.0"
+    },
+    {
+      "id": "worker-1",
+      "kind": "package",
+      "internet_facing": false,
+      "feature_enabled": true,
+      "package_version": "2.3.1",
+      "running_version": "2.3.1",
+      "backported_fixes": [
+        "SYNTH-2026-0001"
+      ],
+      "backport_evidence": {
+        "advisory": "SYNTH-2026-0001",
+        "package_version": "2.3.1",
+        "source": "synthetic distribution advisory fixture",
+        "verified": true,
+        "current": true
+      }
+    },
+    {
+      "id": "tool-1",
+      "kind": "package",
+      "internet_facing": false,
+      "feature_enabled": false,
+      "package_version": "2.1.0",
+      "running_version": "2.1.0"
+    }
+  ]
+}

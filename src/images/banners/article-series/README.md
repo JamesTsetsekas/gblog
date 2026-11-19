@@ -1,0 +1,55 @@
+# Article banner illustrations
+
+Original editorial illustrations generated with the built-in image generation tool on November 19, 2026. These are conceptual illustrations, not screenshots, experimental evidence or depictions of real security incidents. Compact WebP assets are kept here so the banners remain small even when Astro image optimization is disabled. Dedicated 1200 x 600 PNG social previews remain correct when image optimization is disabled. Full-resolution PNG exports were retained in the authoring workspace.
+
+The eight replacements address repeated book covers, unrelated stock photographs and incident-specific images reused for general engineering topics. The existing vulnerability-discovery, Bitcoin-security and gaming-experiment banners remain relevant to their subjects.
+
+## Prompts
+
+### measuring-ai-coding-productivity
+
+Asset: [measuring-ai-coding-productivity.webp](measuring-ai-coding-productivity.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A shallow overhead view of a compact engineering workbench: one small stopwatch next to a five-stage path made of smoked-glass trays, carrying a single orange workpiece from a drafting stencil through inspection and finally into a finished piece. The inspection stage has a magnifying lens and occupies meaningful space. Convey measuring the entire human workflow, including review and rework, rather than speed of typing. Elegant quiet editorial composition, tangible purposeful objects, no charts or numerical claims.
+
+### ai-optimization-without-breaking-correctness
+
+Asset: [ai-optimization-without-breaking-correctness.webp](ai-optimization-without-breaking-correctness.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A beautifully engineered paired mechanical test rig on a charcoal workbench. Two routes carry identical small ivory spheres: a winding longer channel on the left, a precisely machined shorter indexed channel on the right. Both end in matching tidy output trays containing the same arrangement of spheres. An orange calibration slider bridges the rigs, suggesting a shared correctness check before comparing efficiency. Concrete machinery, overhead three-quarter view, restrained conceptual editorial photography.
+
+### ai-proof-and-understanding
+
+Asset: [ai-proof-and-understanding.webp](ai-proof-and-understanding.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A charcoal architectural workbench holds a precise translucent geometric bridge model. Beside it are several thin vellum sheets bearing only abstract geometric construction lines, with a small magnifying lens linking one drawing joint to the physical structure. One structural joint is burnt orange. Convey the distinction between checking a formal artifact and understanding the design. Quiet scholarly editorial still life, no writing or equations.
+
+### passing-tests-is-not-a-proof
+
+Asset: [passing-tests-is-not-a-proof.webp](passing-tests-is-not-a-proof.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A precise overhead studio still life illustrating conservation versus a few passing examples. An ivory rectangular bar is partitioned into three accurately fitting pieces inside a black metal measuring frame; nearby three sample pieces lie outside the frame and a thin orange calibration rail spans its full length. A small physical inspection lens reveals the join. Strong graphic composition, material realism, no text or mathematical notation.
+
+### post-quantum-migration-starts-with-an-inventory
+
+Asset: [post-quantum-migration-starts-with-an-inventory.webp](post-quantum-migration-starts-with-an-inventory.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A curated overhead cryptographic asset inventory on a warm charcoal engineering desk: several distinct small brass and steel keys, a compact key module, coiled physical cable and a translucent layered lattice tile each arranged in its own recessed compartment, with an orange fine thread connecting them to a blank record sheet showing only subtle ruled fields. The lattice suggests emerging cryptography without depicting a quantum computer. Orderly purposeful inventory, no readable text, no locks or shields.
+
+### the-patch-is-out-users-still-vulnerable
+
+Asset: [the-patch-is-out-users-still-vulnerable.webp](the-patch-is-out-users-still-vulnerable.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A miniature physical deployment fleet on a dark studio table, six small matte server modules connected by thin ivory traces. A replacement orange component sits ready near a workbench inspection cradle; only one server has it installed, several still show the older charcoal component. Visual focus on the gap between a finished repair and deploying it across a fleet. Refined editorial photograph, no lightning bolts, screens, letters or metrics.
+
+### timeout-does-not-mean-payment-failed
+
+Asset: [timeout-does-not-mean-payment-failed.webp](timeout-does-not-mean-payment-failed.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A miniature payment routing apparatus made of frosted glass channels on a charcoal tabletop. A single copper-orange token has reached a receiving tray beyond a frosted partition while a thin returning acknowledgement channel stops visibly at that partition. A blank ivory receipt sits at the origin. Convey an operation completing while its response is lost, with one token only and no duplicate token. Tactile editorial conceptual photograph, no text or currency logos.
+
+### triaging-an-ai-security-report
+
+Asset: [triaging-an-ai-security-report.webp](triaging-an-ai-security-report.webp)
+
+Use case: stylized-concept. Asset type: original editorial blog banner, landscape 16:9 composition. Create a sophisticated tactile studio illustration photographed as a real miniature installation, matte charcoal and warm gray surfaces, ivory details with one restrained burnt-orange accent matching a developer's gray-and-orange blog. Soft directional studio light, slight film grain, carefully composed physical materials, crisp subject and subtle depth. Main subject must remain legible at thumbnail size and inside a central 16:9 crop. No text, letters, numbers, code, logos, watermarks, robots, neon blue, purple gradients, cybersecurity shields, or stock-photo laptop. A refined analyst's studio workbench with a small fan of dark translucent report cards containing only geometric marks. An inspection lens and physical tracing wire follow one orange confirmed path through a compact mechanical assembly while several gray candidate paths end at closed boundaries. Concrete investigative evidence and disciplined triage, not a hacker scene. Warm directional light, no computers, locks, shields, code or writing.

@@ -2,9 +2,9 @@
 title: "Why did Satoshi Nakamoto Create Bitcoin?"
 description: "Exploring the motivations behind the creation of the world's first decentralized currency and how it was designed as a response to the 2008 financial crisis."
 pubDate: "2025-05-12 12:00:00"
-category: ["bitcoin", "finance", "technology", "economics", "history"]
+category: ["bitcoin", "technology", "economics"]
 banner: "@images/banners/satoshi.png"
-tags: ["Bitcoin", "Satoshi Nakamoto", "Cryptocurrency", "Financial Crisis", "Decentralization", "Banking", "Sound Money", "Digital Currency"]
+tags: ["Bitcoin", "Satoshi Nakamoto", "Cryptocurrency", "Financial Crisis", "Decentralization", "Banking", "Sound Money", "Digital Currency", "finance", "history"]
 oldViewCount: 0
 selected: true
 oldKeywords: ["satoshi nakamoto", "bitcoin creation", "bitcoin history", "decentralized finance", "2008 financial crisis"]
