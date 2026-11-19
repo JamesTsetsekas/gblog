@@ -1,0 +1,64 @@
+{
+  "src/auth.js|RSA-SHA256": {
+    "owner": "identity team",
+    "purpose": "authentication",
+    "signatureTrustYears": 1,
+    "migrationYears": 1,
+    "controlledBy": "us",
+    "plannedAction": "Verify issuer key rotation and every verifier retires classical acceptance within the assumed one-year migration. Short token expiry alone does not prevent forged fresh tokens. Adopt a supported PQ signing profile when issuer and verifiers are ready.",
+    "issuerKeyLifetimeYears": 1,
+    "classicalAcceptanceRetirementYears": 1
+  },
+  "src/backup.js|aes-256-gcm": {
+    "owner": "platform team",
+    "purpose": "confidentiality",
+    "controlledBy": "us",
+    "plannedAction": "Keep AES-256-GCM. Confirm a fresh 96-bit nonce per data key."
+  },
+  "src/backup.js|RSA public-key encryption": {
+    "owner": "platform team",
+    "purpose": "confidentiality",
+    "confidentialityYears": 7,
+    "migrationYears": 4,
+    "controlledBy": "us",
+    "plannedAction": "Use a provider-supported PQ envelope or reviewed hybrid profile whose recovery policy remains protective if RSA fails. ML-KEM establishes a secret; it does not directly wrap an existing data key. Inventory every recovery copy and test restore before retiring legacy wrapping."
+  },
+  "src/webhooks.js|HMAC-sha256": {
+    "owner": "integrations team",
+    "purpose": "integrity",
+    "controlledBy": "us",
+    "plannedAction": "Keep HMAC-SHA256 with a 256-bit secret."
+  },
+  "src/release.js|ed25519": {
+    "owner": "device team",
+    "purpose": "signature",
+    "signatureTrustYears": 10,
+    "migrationYears": 2,
+    "controlledBy": "us",
+    "plannedAction": "Stage PQ-capable verifiers by device cohort. Upgraded devices require both signatures during the reviewed hybrid phase, then the PQ policy; enforce a rollback-resistant minimum acceptance policy. Retire legacy-only cohorts explicitly.",
+    "classicalAcceptanceRetirementYears": 2
+  },
+  "src/plugins.js|unknown (non-literal algorithm)": {
+    "owner": "platform team",
+    "purpose": "signature",
+    "signatureTrustYears": 3,
+    "migrationYears": 1,
+    "controlledBy": "us",
+    "plannedAction": "Find every configured value in every environment and restrict it to an allowlist."
+  },
+  "src/cache.js|md5": {
+    "owner": "web team",
+    "purpose": "none",
+    "securityRelevant": false,
+    "controlledBy": "us",
+    "plannedAction": "Record as a non-security use so it stops reappearing in reviews."
+  },
+  "config/tls.json|TLS groups: X25519, P-256": {
+    "owner": "infrastructure team",
+    "purpose": "confidentiality",
+    "confidentialityYears": 5,
+    "migrationYears": 1,
+    "controlledBy": "vendor",
+    "plannedAction": "Ask for a supported TLS 1.3 hybrid profile, an enforced minimum policy and a migration date. Check negotiated groups on representative connections; an advertised hybrid group does not rule out classical fallback."
+  }
+}

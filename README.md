@@ -48,6 +48,10 @@ Use a local 16:9 banner when possible, write descriptive alt text for inline ima
 
 Articles with at least three second-level headings automatically display a collapsible table of contents. Set `toc: true` or `toc: false` in frontmatter to override this. Code blocks gain a copy button when JavaScript is available.
 
+## Article companion examples
+
+The software correctness, security, cryptography, and AI evaluation articles include [local runnable examples](examples/article-series/README.md). That index lists the commands, synthetic fixtures, input contracts, and limitations. The examples use Python's standard library or Node's built-in test runner; the optional benchmark plotting script uses matplotlib.
+
 ## Comments
 
 Comments and reactions use [Giscus](https://giscus.app/) with this repository's GitHub Discussions and Announcements category. The repository and category IDs in `src/config.ts` belong to `JamesTsetsekas/gblog`.

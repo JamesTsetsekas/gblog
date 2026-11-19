@@ -1,0 +1,11 @@
+{
+  "recorded": "2026-11-19",
+  "environment": "CPython 3.13.1; Windows 11 build 26200; Intel Core i7-8700K; shared machine",
+  "unit": "microseconds per complete batch",
+  "summary": "Median, minimum and maximum of nine sample averages. Sort and result allocation included. Raw individual samples were not archived.",
+  "workloads": [
+    { "name": "Single lookup", "events": 4096, "windows": 1, "scan": [195.8, 162.4, 274.1], "indexed": [468.9, 390.4, 508.4] },
+    { "name": "Dashboard batch", "events": 4096, "windows": 128, "scan": [25298.4, 18886.2, 30441.0], "indexed": [449.8, 422.8, 479.0] },
+    { "name": "Clustered events", "events": 16384, "windows": 32, "scan": [25847.3, 21214.9, 32864.6], "indexed": [1298.0, 1203.6, 1597.1] }
+  ]
+}
